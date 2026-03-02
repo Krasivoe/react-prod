@@ -1,0 +1,33 @@
+import { classNames } from '@/shared/lib/classNames/classNames';
+import type { ValuesOf } from '@/shared/types/common';
+import React, { type ButtonHTMLAttributes, type FC, type PropsWithChildren } from 'react';
+import cls from './Button.module.scss';
+
+export const ThemeButton = {
+    CLEAR: 'clear',
+} as const;
+
+type ThemeButtonValue = ValuesOf<typeof ThemeButton>;
+
+interface ButtonProps extends PropsWithChildren, ButtonHTMLAttributes<HTMLButtonElement> {
+    className?: string;
+    theme?: ThemeButtonValue;
+}
+
+export const Button: FC<ButtonProps> = (props) => {
+    const {
+        className,
+        children,
+        theme,
+        ...otherProps
+    } = props;
+
+    return (
+        <button
+            className={classNames((cls.button), {}, [className, cls[theme]])}
+            {...otherProps}
+        >
+            {children}
+        </button>
+    );
+};
