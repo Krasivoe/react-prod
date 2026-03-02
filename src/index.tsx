@@ -1,10 +1,9 @@
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { App } from './App';
-import { someFn } from './test';
-import { ThemeProvider } from './theme/ThemeProvider';
+import { App } from './app/App';
 
-someFn(44);
+import '@/shared/config/i18n/i18n';
 
 const container = document.getElementById('root');
 
