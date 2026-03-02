@@ -1,4 +1,4 @@
-import type { ValuesOf } from 'src/types/common';
+import type { ValuesOf } from '@/shared/types/common';
 
 export const BuildMode = {
     DEV: 'development',
@@ -11,6 +11,7 @@ export interface BuildPaths {
     entry: string;
     build: string;
     html: string;
+    src: string;
 }
 
 export interface BuildOptions {
