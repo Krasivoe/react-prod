@@ -21,4 +21,4 @@ export default (env: BuildEnv) => {
         isDev,
         port: PORT,
     });
-}
+};
