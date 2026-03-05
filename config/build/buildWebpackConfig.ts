@@ -11,7 +11,7 @@ export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration
     const { mode, paths, isDev } = options;
 
     return {
-        mode: mode,
+        mode,
         entry: paths.entry,
         output: {
             filename: OUTPUT_FILE_NAME,
@@ -26,5 +26,4 @@ export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration
         devtool: isDev ? 'inline-source-map' : undefined,
         devServer: isDev ? buildDevServer(options) : undefined,
     };
-
 };

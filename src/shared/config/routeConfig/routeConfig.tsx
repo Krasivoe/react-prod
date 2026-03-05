@@ -1,7 +1,7 @@
+import type { RouteProps } from 'react-router-dom';
 import { AboutPage } from '@/pages/AboutPage';
 import MainPage from '@/pages/MainPage/ui/MainPage';
 import type { ValuesOf } from '@/shared/types/common';
-import type { RouteProps } from 'react-router-dom';
 
 export const AppRoutes = {
     MAIN: 'main',
@@ -25,4 +25,3 @@ export const routeConfig: Record<AppRoutesValue, RouteProps> = {
         element: <AboutPage />,
     },
 };
-
