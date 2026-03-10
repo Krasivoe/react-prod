@@ -2,10 +2,12 @@ import type { RouteProps } from 'react-router-dom';
 import { AboutPage } from '@/pages/AboutPage';
 import MainPage from '@/pages/MainPage/ui/MainPage';
 import type { ValuesOf } from '@/shared/types/common';
+import { NotFoundPage } from '@/pages/NotFound';
 
 export const AppRoutes = {
     MAIN: 'main',
     ABOUT: 'about',
+    NOT_FOUND: 'not_found',
 } as const;
 
 type AppRoutesValue = ValuesOf<typeof AppRoutes>;
@@ -13,6 +15,7 @@ type AppRoutesValue = ValuesOf<typeof AppRoutes>;
 export const RoutePath: Record<AppRoutesValue, string> = {
     [AppRoutes.MAIN]: '/',
     [AppRoutes.ABOUT]: '/about',
+    [AppRoutes.NOT_FOUND]: '*',
 };
 
 export const routeConfig: Record<AppRoutesValue, RouteProps> = {
@@ -21,7 +24,11 @@ export const routeConfig: Record<AppRoutesValue, RouteProps> = {
         element: <MainPage />,
     },
     [AppRoutes.ABOUT]: {
-        path: '/about',
+        path: RoutePath.about,
         element: <AboutPage />,
+    },
+    [AppRoutes.NOT_FOUND]: {
+        path: RoutePath.not_found,
+        element: <NotFoundPage />,
     },
 };
