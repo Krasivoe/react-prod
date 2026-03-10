@@ -1,28 +1,26 @@
 import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { routeConfig } from '@/shared/config/routeConfig/routeConfig';
+import { PageLoader } from '@/widgets/PageLoader';
 
 export function AppRouter() {
-    const { t } = useTranslation();
-
     return (
-        <Suspense fallback={<div>{t('Загрузка')}</div>}>
-            <Routes>
-                {
-                    Object.values(routeConfig).map(({ element, path }) => (
-                        <Route
-                            key={path}
-                            element={(
+        <Routes>
+            {
+                Object.values(routeConfig).map(({ element, path }) => (
+                    <Route
+                        key={path}
+                        element={(
+                            <Suspense fallback={<PageLoader />}>
                                 <div className="page-wrapper">
                                     {element}
                                 </div>
-                            )}
-                            path={path}
-                        />
-                    ))
-                }
-            </Routes>
-        </Suspense>
+                            </Suspense>
+                        )}
+                        path={path}
+                    />
+                ))
+            }
+        </Routes>
     );
 }
