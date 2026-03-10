@@ -1,6 +1,8 @@
 module.exports = {
     env: {
-        browser: true, es2021: true,
+        browser: true,
+        es2021: true,
+        jest: true,
     },
     extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended'],
     parser: '@typescript-eslint/parser',
@@ -34,6 +36,7 @@ module.exports = {
             markupOnly: true,
             ignoreAttribute: ['to', 'href', 'path', 'as', 'target'],
         }],
+        'max-len': ['error', { code: 120, ignoreComments: true }],
     },
     globals: {
         __IS_DEV__: true,
