@@ -2,5 +2,7 @@
   "Язык": "English",
   "Загрузка": "Loading...",
   "Переключить": "Toggle",
-  "Страницы не найдена": "Page not found"
+  "Страницы не найдена": "Page not found",
+  "У нас что-то сломалось...": "Something's broken....",
+  "Обновить страницу": "Reload page"
 }
