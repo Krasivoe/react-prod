@@ -12,6 +12,7 @@ type ThemeButtonValue = ValuesOf<typeof ThemeButton>;
 interface ButtonProps extends PropsWithChildren, ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     theme?: ThemeButtonValue;
+    label?: string;
 }
 
 export const Button: FC<ButtonProps> = (props) => {
@@ -19,6 +20,7 @@ export const Button: FC<ButtonProps> = (props) => {
         className,
         children,
         theme,
+        label,
         ...otherProps
     } = props;
 
@@ -28,7 +30,7 @@ export const Button: FC<ButtonProps> = (props) => {
             className={classNames((cls.button), {}, [className, cls[theme]])}
             {...otherProps}
         >
-            {children}
+            {children ?? label}
         </button>
     );
 };
