@@ -34,11 +34,19 @@ module.exports = {
         }],
         'i18next/no-literal-string': ['error', {
             markupOnly: true,
-            ignoreAttribute: ['to', 'href', 'path', 'as', 'target'],
+            ignoreAttribute: ['to', 'href', 'path', 'as', 'target', 'data-testid'],
         }],
         'max-len': ['error', { code: 120, ignoreComments: true }],
     },
     globals: {
         __IS_DEV__: true,
     },
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
+    ],
 };
