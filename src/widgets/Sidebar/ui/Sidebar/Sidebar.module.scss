@@ -1,12 +1,9 @@
-@use "@/app/styles/mixins/common" as *;
-
 .sidebar {
     height: calc(100dvh - var(--navbar-height));
     width: var(--sidebar-width);
     background: var(--inverted-bg-color);
     position: relative;
-
-    @include transition;
+    transition: width var(--transition-default);
 }
 
 .collapsed {
@@ -16,6 +13,7 @@
 .switchers {
     position: absolute;
     bottom: 20px;
+    align-items: center;
     display: flex;
     justify-content: center;
     width: 100%;

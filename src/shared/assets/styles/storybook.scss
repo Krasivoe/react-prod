@@ -1,0 +1,19 @@
+.story-wrapper {
+    display: flex;
+    width: 100%;
+
+    &.initial {
+        justify-content: start;
+        align-items: start;
+    }
+
+    &.centered {
+        justify-content: center;
+        align-items: center;
+    }
+
+    &.top {
+        justify-content: center;
+        align-items: start;
+    }
+}

@@ -5,6 +5,7 @@ import cls from './Button.module.scss';
 
 export const ThemeButton = {
     CLEAR: 'clear',
+    OUTLINE: 'outline',
 } as const;
 
 type ThemeButtonValue = ValuesOf<typeof ThemeButton>;
@@ -13,6 +14,7 @@ interface ButtonProps extends PropsWithChildren, ButtonHTMLAttributes<HTMLButton
     className?: string;
     theme?: ThemeButtonValue;
     label?: string;
+    onlyIcon?: boolean;
 }
 
 export const Button: FC<ButtonProps> = (props) => {
@@ -21,13 +23,14 @@ export const Button: FC<ButtonProps> = (props) => {
         children,
         theme,
         label,
+        onlyIcon,
         ...otherProps
     } = props;
 
     return (
         <button
             type="button"
-            className={classNames((cls.button), {}, [className, cls[theme]])}
+            className={classNames((cls.button), { [cls.onlyIcon]: onlyIcon }, [className, cls[theme]])}
             {...otherProps}
         >
             {children ?? label}
