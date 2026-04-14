@@ -16,6 +16,7 @@ export function ThemeSwitcher({ className }: ThemeSwitcherProps) {
         <Button
             theme={ThemeButton.CLEAR}
             onClick={toggleTheme}
+            onlyIcon
             className={classNames('', {}, [className])}
         >
             {

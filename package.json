@@ -11,7 +11,9 @@
     "lint:scss": "npx stylelint '**/*.scss'",
     "lint:scss:fix": "npx stylelint '**/*.scss' --fix",
     "check-all": "npm run lint:ts ; npm run lint:scss",
-    "unit": "jest --config ./config/jest/jest.config.ts"
+    "unit": "jest --config ./config/jest/jest.config.ts",
+    "storybook": "storybook dev -p 6006 -c ./config/storybook",
+    "build-storybook": "storybook build -c ./config/storybook"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +24,8 @@
     "@babel/preset-env": "^7.29.0",
     "@babel/preset-react": "^7.28.5",
     "@babel/preset-typescript": "^7.28.5",
+    "@storybook/addon-webpack5-compiler-swc": "^4.0.3",
+    "@storybook/react-webpack5": "^10.3.5",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
@@ -53,6 +57,7 @@
     "mini-css-extract-plugin": "^2.10.0",
     "sass": "^1.97.3",
     "sass-loader": "^16.0.7",
+    "storybook": "^10.3.5",
     "style-loader": "^4.0.0",
     "stylelint": "^14.5.3",
     "stylelint-config-standard-scss": "^3.0.0",
