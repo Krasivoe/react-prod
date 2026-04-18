@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { Button, ThemeButton } from './Button';
+import { Theme } from '@/app/providers/ThemeProvider';
 
 const meta = {
     title: 'shared/Button',
@@ -16,6 +17,15 @@ export const Primary: Story = {
     },
 };
 
+export const PrimaryDark: Story = {
+    args: {
+        children: 'Button',
+    },
+    parameters: {
+        theme: Theme.DARK,
+    },
+};
+
 export const Clear: Story = {
     args: {
         theme: ThemeButton.CLEAR,
@@ -23,9 +33,29 @@ export const Clear: Story = {
     },
 };
 
+export const ClearDark: Story = {
+    args: {
+        theme: ThemeButton.CLEAR,
+        label: 'Button',
+    },
+    parameters: {
+        theme: Theme.DARK,
+    },
+};
+
 export const Outline: Story = {
     args: {
         theme: ThemeButton.OUTLINE,
         label: 'Button',
+    },
+};
+
+export const OutlineDark: Story = {
+    args: {
+        theme: ThemeButton.OUTLINE,
+        label: 'Button',
+    },
+    parameters: {
+        theme: Theme.DARK,
     },
 };
