@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@/shared/ui/Button/Button';
+import { Button } from '@/shared/ui/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { LangSwitcher } from '@/shared/ui/LangSwitcher';
 import { ThemeSwitcher } from '@/shared/ui/ThemeSwitcher';
