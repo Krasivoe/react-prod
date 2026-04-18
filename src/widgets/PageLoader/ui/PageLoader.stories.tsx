@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
-import { PageError } from './PageError';
+import { PageLoader } from './PageLoader';
 import { Theme } from '@/app/providers/ThemeProvider';
 
 const meta = {
-    title: 'widgets/PageError',
-    component: PageError,
-} satisfies Meta<typeof PageError>;
+    title: 'widgets/PageLoader',
+    component: PageLoader,
+} satisfies Meta<typeof PageLoader>;
 
 export default meta;
 

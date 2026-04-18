@@ -2,9 +2,8 @@ import '@/app/styles/index.scss';
 import type { Decorator } from '@storybook/react';
 import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
 
-export const AppProviderDecorator: Decorator = (StoryComponent, { globals, parameters }) => {
-    const { theme = Theme.LIGHT } = globals;
-    const { position = 'centered' } = parameters;
+export const AppProviderDecorator: Decorator = (StoryComponent, { parameters }) => {
+    const { theme = Theme.LIGHT, position = 'centered' } = parameters;
 
     return (
         <ThemeProvider>
