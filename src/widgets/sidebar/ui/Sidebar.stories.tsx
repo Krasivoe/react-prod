@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
-import { ThemeSwitcher } from './ThemeSwitcher';
+import { Sidebar } from './Sidebar';
 import { Theme } from '@/app/providers/theme-provider';
 
 const meta = {
-    title: 'shared/ThemeSwitcher',
-    component: ThemeSwitcher,
-} satisfies Meta<typeof ThemeSwitcher>;
+    title: 'widgets/sidebar',
+    component: Sidebar,
+} satisfies Meta<typeof Sidebar>;
 
 export default meta;
 

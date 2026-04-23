@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { AppLink, AppLinkTheme } from './AppLink';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/app/providers/theme-provider';
 
 type AppLinkMeta = Meta<typeof AppLink>;
 
