@@ -1,11 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
-import { ThemeSwitcher } from './ThemeSwitcher';
+import { NotFoundPage } from './NotFoundPage';
 import { Theme } from '@/app/providers/theme-provider';
 
 const meta = {
-    title: 'shared/ThemeSwitcher',
-    component: ThemeSwitcher,
-} satisfies Meta<typeof ThemeSwitcher>;
+    title: 'pages/not-found',
+    component: NotFoundPage,
+    parameters: {
+        position: 'initial',
+    },
+} satisfies Meta<typeof NotFoundPage>;
 
 export default meta;
 

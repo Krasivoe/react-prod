@@ -1,11 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
-import { ThemeSwitcher } from './ThemeSwitcher';
+import AboutPage from './AboutPage';
 import { Theme } from '@/app/providers/theme-provider';
 
 const meta = {
-    title: 'shared/ThemeSwitcher',
-    component: ThemeSwitcher,
-} satisfies Meta<typeof ThemeSwitcher>;
+    title: 'pages/about',
+    component: AboutPage,
+    parameters: {
+        position: 'initial',
+    },
+} satisfies Meta<typeof AboutPage>;
 
 export default meta;
 

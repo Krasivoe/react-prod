@@ -1,11 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
-import { ThemeSwitcher } from './ThemeSwitcher';
+import { Navbar } from './Navbar';
 import { Theme } from '@/app/providers/theme-provider';
 
 const meta = {
-    title: 'shared/ThemeSwitcher',
-    component: ThemeSwitcher,
-} satisfies Meta<typeof ThemeSwitcher>;
+    title: 'widgets/navbar',
+    component: Navbar,
+    parameters: {
+        position: 'top',
+    },
+} satisfies Meta<typeof Navbar>;
 
 export default meta;
 
