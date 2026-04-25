@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
-import { Button, ThemeButton } from './Button';
 import { Theme } from '@/app/providers/theme-provider';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { DefaultSize } from '@/shared/types/components';
 
 const meta = {
     title: 'shared/Button',
@@ -28,14 +29,14 @@ export const PrimaryDark: Story = {
 
 export const Clear: Story = {
     args: {
-        theme: ThemeButton.CLEAR,
+        theme: ButtonTheme.CLEAR,
         label: 'Button',
     },
 };
 
 export const ClearDark: Story = {
     args: {
-        theme: ThemeButton.CLEAR,
+        theme: ButtonTheme.CLEAR,
         label: 'Button',
     },
     parameters: {
@@ -45,15 +46,102 @@ export const ClearDark: Story = {
 
 export const Outline: Story = {
     args: {
-        theme: ThemeButton.OUTLINE,
+        theme: ButtonTheme.OUTLINE,
         label: 'Button',
+    },
+};
+
+export const OutlineXS: Story = {
+    args: {
+        theme: ButtonTheme.OUTLINE,
+        label: 'Button',
+        size: DefaultSize.XS,
+    },
+};
+
+export const OutlineS: Story = {
+    args: {
+        theme: ButtonTheme.OUTLINE,
+        label: 'Button',
+        size: DefaultSize.S,
+    },
+};
+
+export const OutlineL: Story = {
+    args: {
+        theme: ButtonTheme.OUTLINE,
+        label: 'Button',
+        size: DefaultSize.L,
     },
 };
 
 export const OutlineDark: Story = {
     args: {
-        theme: ThemeButton.OUTLINE,
+        theme: ButtonTheme.OUTLINE,
         label: 'Button',
+    },
+    parameters: {
+        theme: Theme.DARK,
+    },
+};
+
+export const Background: Story = {
+    args: {
+        theme: ButtonTheme.BACKGROUND,
+        label: 'Button',
+    },
+};
+
+export const BackgroundDark: Story = {
+    args: {
+        theme: ButtonTheme.BACKGROUND,
+        label: 'Button',
+    },
+    parameters: {
+        theme: Theme.DARK,
+    },
+};
+
+export const Square: Story = {
+    args: {
+        theme: ButtonTheme.BACKGROUND,
+        label: '>',
+        square: true,
+    },
+};
+
+export const SquareXS: Story = {
+    args: {
+        theme: ButtonTheme.BACKGROUND,
+        label: '>',
+        square: true,
+        size: DefaultSize.XS,
+    },
+};
+
+export const SquareS: Story = {
+    args: {
+        theme: ButtonTheme.BACKGROUND,
+        label: '>',
+        square: true,
+        size: DefaultSize.S,
+    },
+};
+
+export const SquareL: Story = {
+    args: {
+        theme: ButtonTheme.BACKGROUND,
+        label: '>',
+        square: true,
+        size: DefaultSize.L,
+    },
+};
+
+export const SquareDark: Story = {
+    args: {
+        theme: ButtonTheme.BACKGROUND,
+        label: '>',
+        square: true,
     },
     parameters: {
         theme: Theme.DARK,

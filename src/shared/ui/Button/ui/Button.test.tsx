@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Button, ThemeButton } from '@/shared/ui/Button';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 
 describe('Button', () => {
     test('should render', () => {
@@ -11,7 +11,7 @@ describe('Button', () => {
     });
 
     test('should apply clear theme class', () => {
-        render(<Button theme={ThemeButton.CLEAR}>TEST</Button>);
+        render(<Button theme={ButtonTheme.CLEAR}>TEST</Button>);
 
         const button = screen.getByText('TEST');
 
