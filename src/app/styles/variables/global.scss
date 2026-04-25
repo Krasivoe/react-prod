@@ -1,16 +1,45 @@
 :root {
     --font-family-main: "JetBrains Mono", "Fira Code", consolas, monospace;
-    --font-size-m: 16px;
-    --font-line-m: 24px;
+    --font-xs: var(--font-size-xs) / var(--font-line-m) var(--font-family-main);
+    --font-s: var(--font-size-s) / var(--font-line-2s) var(--font-family-main);
     --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
-    --font-size-l: 24px;
-    --font-line-l: 32px;
-    --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+    --font-l: var(--font-size-l) / var(--font-line-xs) var(--font-family-main);
+    --font-xl: var(--font-size-xl) / var(--font-line-xs) var(--font-family-main);
     --page-wrapper-padding: 20px;
+    --transition-default: 0.2s ease;
 
-    // Размеры
+    // Текст
+    --font-size-xs: 12px;
+    --font-size-s: 14px;
+    --font-size-m: 16px;
+    --font-size-l: 20px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 32px;
+    --font-size-3xl: 48px;
+
+    // Высота строки
+    --font-line-xs: 1.2;
+    --font-line-2s: 1.3;
+    --font-line-s: 1.4;
+    --font-line-m: 1.5;
+
+    // Отступы
+    --space-4xs: 2px;
+    --space-3xs: 4px;
+    --space-2xs: 6px;
+    --space-xs: 8px;
+    --space-s: 12px;
+    --space-m: 16px;
+    --space-l: 20px;
+    --space-xl: 24px;
+    --space-2xl: 28px;
+    --space-3xl: 32px;
+    --space-4xl: 40px;
+    --space-5xl: 48px;
+    --space-6xl: 56px;
+
+    // Размеры компонентов
     --navbar-height: 50px;
     --sidebar-width: 300px;
     --sidebar-width-collapsed: 140px;
-    --transition-default: 0.2s ease;
 }

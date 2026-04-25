@@ -1,20 +1,16 @@
 import React, { type ButtonHTMLAttributes, type FC, type PropsWithChildren } from 'react';
 import { classNames } from '@/shared/lib/class-names/classNames';
-import type { ValuesOf } from '@/shared/types/common';
 import cls from './Button.module.scss';
-
-export const ThemeButton = {
-    CLEAR: 'clear',
-    OUTLINE: 'outline',
-} as const;
-
-type ThemeButtonValue = ValuesOf<typeof ThemeButton>;
+import { DefaultSize, DefaultSizeValue } from '@/shared/types/components';
+import { ButtonThemeValue } from '@/shared/ui/Button/types';
 
 interface ButtonProps extends PropsWithChildren, ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
-    theme?: ThemeButtonValue;
+    theme?: ButtonThemeValue;
     label?: string;
+    size?: DefaultSizeValue
     onlyIcon?: boolean;
+    square?: boolean;
 }
 
 export const Button: FC<ButtonProps> = (props) => {
@@ -23,14 +19,24 @@ export const Button: FC<ButtonProps> = (props) => {
         children,
         theme,
         label,
+        size = DefaultSize.M,
         onlyIcon,
+        square,
         ...otherProps
     } = props;
+
+    const mods: Record<string, boolean> = {
+        [cls[theme]]: true,
+        [cls.onlyIcon]: onlyIcon,
+        [cls.square]: square,
+    };
+
+    const additional: string[] = [className, cls[theme], cls[size]];
 
     return (
         <button
             type="button"
-            className={classNames((cls.button), { [cls.onlyIcon]: onlyIcon }, [className, cls[theme]])}
+            className={classNames((cls.button), mods, additional)}
             {...otherProps}
         >
             {children ?? label}

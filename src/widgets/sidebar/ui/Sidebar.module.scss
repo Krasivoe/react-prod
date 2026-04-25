@@ -6,16 +6,67 @@
     transition: width var(--transition-default);
 }
 
-.collapsed {
-    width: var(--sidebar-width-collapsed);
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-l) var(--space-m);
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-l);
+}
+
+.link {
+    display: flex;
+    align-items: start;
+    text-decoration: none;
+    column-gap: var(--space-s);
+}
+
+.link-icon {
+    fill: var(--inverted-primary-color);
 }
 
 .switchers {
     position: absolute;
-    bottom: 20px;
+    bottom: var(--space-l);
     align-items: center;
     display: flex;
-    justify-content: center;
-    width: 100%;
-    column-gap: 20px;
+    align-self: center;
+    gap: var(--space-xs) var(--space-l);
+}
+
+.collapsed {
+    width: var(--sidebar-width-collapsed);
+
+    .switchers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link-text {
+        height: 0;
+        opacity: 0;
+        transition: opacity var(--transition-default);
+    }
+}
+
+.collapse-btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    position: absolute;
+    right: calc(-1 * var(--space-4xl));
+    bottom: var(--space-4xl);
+
+    &:hover,
+    &:active {
+        opacity: 1;
+    }
 }

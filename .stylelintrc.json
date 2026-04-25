@@ -11,6 +11,7 @@
           "dvh"
         ]
       }
-    ]
+    ],
+    "selector-class-pattern": null
   }
 }
