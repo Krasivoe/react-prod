@@ -12,7 +12,7 @@
     "lint:scss:fix": "npx stylelint '**/*.scss' --fix",
     "check-all": "npm run lint:ts ; npm run lint:scss",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
-    "test:ui": "npm run storybook:build && lost-pixel",
+    "test:ui": "npm run storybook:build && lost-pixel && node scripts/check-lost-pixel.js",
     "test:ui:update": "lost-pixel update",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
