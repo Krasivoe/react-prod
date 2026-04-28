@@ -1,10 +1,10 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { Sidebar } from '@/widgets/sidebar';
-import { renderWithTranslation } from '@/shared/lib/tests/render-with-translation/renderWithTranslation';
+import { componentRender } from '@/shared/config/tests/component-render/componentRender';
 
 describe('Sidebar', () => {
     test('should render', () => {
-        renderWithTranslation(<Sidebar />);
+        componentRender(<Sidebar />);
 
         const sidebar = screen.getByTestId('sidebar');
 
@@ -12,7 +12,7 @@ describe('Sidebar', () => {
     });
 
     test('should have collapsed class when toggled', () => {
-        renderWithTranslation(<Sidebar />);
+        componentRender(<Sidebar />);
 
         const sidebar = screen.getByTestId('sidebar');
         const toggleBtn = screen.getByTestId('sidebar-toggle');
