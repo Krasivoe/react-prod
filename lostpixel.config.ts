@@ -5,6 +5,5 @@ export const config: CustomProjectConfig = {
         storybookUrl: './storybook-static',
     },
     generateOnly: false,
-    breakpoints: [430, 1440],
-    compareConcurrency: 500,
+    breakpoints: [1440],
 };
