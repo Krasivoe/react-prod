@@ -7,8 +7,10 @@ const diffDir = joinPath(lostPixelDir, 'difference');
 const baselineWeb = './baseline';
 const actualWeb = './current';
 
-const files = fs.readdirSync(diffDir)
-    .filter((f) => f.endsWith('.png'));
+const exists = fs.existsSync(diffDir);
+const files = exists
+    ? fs.readdirSync(diffDir).filter((f) => f.endsWith('.png'))
+    : [];
 
 const cards = files.map((file) => `
     <div class="card">
@@ -27,6 +29,16 @@ const cards = files.map((file) => `
     </div>
 `).join('\n');
 
+const body = files.length === 0
+    ? '<h1 class="success">No visual regressions detected</h1>'
+    : `
+    <h1>Visual Regression Report</h1>
+        
+        <div class="cards">
+             ${cards}
+        </div>
+    `;
+
 const html = `
 <html>
     <head>
@@ -38,6 +50,14 @@ const html = `
                 max-width:1200px;
                 margin:auto;
                 padding:40px;
+            }
+            
+            h1 {
+                text-align:center;
+            }
+            
+            h1.success {
+                color: #00e300
             }
             
             .cards {
@@ -75,11 +95,7 @@ const html = `
     </head>
 
     <body>
-        <h1>Visual Regression Report</h1>
-        
-        <div class="cards">
-             ${cards}
-        </div>
+        ${body}
     </body>
 </html>
 `;
