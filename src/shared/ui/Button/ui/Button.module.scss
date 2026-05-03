@@ -57,14 +57,31 @@
     padding: 0;
 }
 
-.clear {
+.clear,
+.clear-inverted {
     border: none;
     outline: none;
     background: none;
     transition: var(--transition-default);
+}
+
+.clear {
+    color: var(--primary-color);
 
     &:hover {
-        background: var(--primary-clear-color-hover);
+        background: var(--primary-color-hover);
+
+        &.only-icon {
+            background: none;
+        }
+    }
+}
+
+.clear-inverted {
+    color: var(--inverted-primary-color);
+
+    &:hover {
+        background: var(--inverted-primary-color-hover);
 
         &.only-icon {
             background: none;
@@ -78,9 +95,18 @@
     background: none;
 }
 
-.background {
-    background: var(--inverted-bg-color);
-    color: var(--inverted-primary-color);
+.background,
+.background-inverted {
     border: none;
     outline: none;
+}
+
+.background {
+    background: var(--bg-color);
+    color: var(--primary-color);
+}
+
+.background-inverted {
+    background: var(--inverted-bg-color);
+    color: var(--inverted-primary-color);
 }

@@ -38,8 +38,20 @@
     --space-5xl: 48px;
     --space-6xl: 56px;
 
+    // Радиусы
+    --control-radius: 12px;
+    --control-radius-m: 8px;
+    --control-radius-s: 6px;
+    --control-radius-xs: 4px;
+
     // Размеры компонентов
     --navbar-height: 50px;
     --sidebar-width: 300px;
     --sidebar-width-collapsed: 140px;
+
+    // z - Индексы
+    --modal-z-index: 10;
+
+    // Цвета
+    --overlay-color: rgb(0 0 0 / 60%);
 }

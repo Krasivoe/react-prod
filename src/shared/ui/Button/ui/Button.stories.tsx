@@ -44,6 +44,23 @@ export const ClearDark: Story = {
     },
 };
 
+export const ClearInverted: Story = {
+    args: {
+        theme: ButtonTheme.CLEAR_INVERTED,
+        label: 'Button',
+    },
+};
+
+export const ClearInvertedDark: Story = {
+    args: {
+        theme: ButtonTheme.CLEAR_INVERTED,
+        label: 'Button',
+    },
+    parameters: {
+        theme: Theme.DARK,
+    },
+};
+
 export const Outline: Story = {
     args: {
         theme: ButtonTheme.OUTLINE,
@@ -95,6 +112,23 @@ export const Background: Story = {
 export const BackgroundDark: Story = {
     args: {
         theme: ButtonTheme.BACKGROUND,
+        label: 'Button',
+    },
+    parameters: {
+        theme: Theme.DARK,
+    },
+};
+
+export const BackgroundInverted: Story = {
+    args: {
+        theme: ButtonTheme.BACKGROUND_INVERTED,
+        label: 'Button',
+    },
+};
+
+export const BackgroundInvertedDark: Story = {
+    args: {
+        theme: ButtonTheme.BACKGROUND_INVERTED,
         label: 'Button',
     },
     parameters: {
