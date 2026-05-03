@@ -1,11 +1,12 @@
 import { createContext } from 'react';
+import { ValuesOf } from '@/shared/types/common';
 
 export const Theme = {
     LIGHT: 'normal',
     DARK: 'dark',
 } as const;
 
-export type ThemeValue = typeof Theme[keyof typeof Theme];
+export type ThemeValue = ValuesOf<typeof Theme>;
 
 export interface ThemeContextProps {
     theme?: ThemeValue;

@@ -30,7 +30,7 @@ export function Sidebar({ className }: SidebarProps) {
                 className={cls.collapseBtn}
                 square
                 size={DefaultSize.M}
-                theme={ButtonTheme.BACKGROUND}
+                theme={ButtonTheme.BACKGROUND_INVERTED}
             >
                 {collapsed ? '>' : '<'}
             </Button>
