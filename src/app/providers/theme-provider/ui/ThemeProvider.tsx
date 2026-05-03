@@ -1,5 +1,5 @@
 import React, {
-    type FC, type PropsWithChildren, ReactNode, useMemo, useState,
+    type FC, ReactNode, useMemo, useState,
 } from 'react';
 import {
     LOCAL_STORAGE_THEME_KEY, Theme,
