@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { classNames } from '@/shared/lib/class-names/classNames';

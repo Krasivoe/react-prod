@@ -1,4 +1,3 @@
-import React from 'react';
 import { Theme, useTheme } from '@/app/providers/theme-provider';
 import { classNames } from '@/shared/lib/class-names/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';

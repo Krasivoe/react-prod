@@ -1,4 +1,4 @@
-import React, { type ButtonHTMLAttributes, type FC, type PropsWithChildren } from 'react';
+import type { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
 import { classNames } from '@/shared/lib/class-names/classNames';
 import cls from './Button.module.scss';
 import { DefaultSize, DefaultSizeValue } from '@/shared/types/components';

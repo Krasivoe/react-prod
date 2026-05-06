@@ -1,4 +1,4 @@
-import React, { type FC, type PropsWithChildren } from 'react';
+import { type FC, type PropsWithChildren } from 'react';
 import { Link, type LinkProps } from 'react-router-dom';
 import { classNames } from '@/shared/lib/class-names/classNames';
 import type { ValuesOf } from '@/shared/types/common';
