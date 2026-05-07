@@ -41,5 +41,12 @@ export default ({ config }: StorybookConfig) => {
     config.module.rules?.push(buildSvgLoader());
     config.module.rules?.push(buildCssLoader(true));
 
+    config.plugins = config.plugins || [];
+    config.plugins.push(
+        new webpack.DefinePlugin({
+            __IS_DEV__: JSON.stringify(true),
+        }),
+    );
+
     return config;
 };
