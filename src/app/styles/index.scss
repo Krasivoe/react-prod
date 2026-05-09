@@ -21,3 +21,30 @@ body {
     flex-grow: 1;
     padding: var(--page-wrapper-padding);
 }
+
+.mix-focus:focus,
+.mix-focus:focus:hover,
+.mix-focus[class*="_focus"],
+.mix-focus[class*="_focus"]:hover {
+    animation: focus var(--transition-default);
+    box-shadow: 0 0 0 2px var(--color-control-focus);
+}
+
+.mix-focus:focus:active,
+.mix-focus:focus:active:hover,
+.mix-focus[class*="_focus"]:active,
+.mix-focus[class*="_focus"]:active:hover {
+    animation-name: none !important;
+}
+
+@keyframes focus {
+    0% {
+        box-shadow:
+            0 0 0 0 var(--color-control-focus),
+            0 0 0 0 var(--color-control-active);
+    }
+
+    to {
+        box-shadow: 0 0 0 2px var(--color-control-focus), 0 0 0 4px transparent;
+    }
+}

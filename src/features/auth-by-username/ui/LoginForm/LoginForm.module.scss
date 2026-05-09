@@ -1,0 +1,18 @@
+.login-form,
+.login-fields {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form {
+    row-gap: var(--space-l);
+    min-width: 400px;
+}
+
+.login-fields {
+    row-gap: var(--space-m);
+}
+
+.login-btn {
+    margin-left: auto;
+}

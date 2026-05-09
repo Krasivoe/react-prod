@@ -5,5 +5,7 @@
   "Страница не найдена": "Page not found",
   "У нас что-то сломалось...": "Something's broken....",
   "Обновить страницу": "Reload page",
-  "Войти": "Sign in"
+  "Войти": "Sign in",
+  "Введите username": "input username",
+  "Введите пароль": "input password"
 }

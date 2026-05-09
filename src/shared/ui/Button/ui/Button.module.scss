@@ -10,12 +10,16 @@
     align-items: center;
     transition: opacity var(--transition-default);
 
+    &:focus {
+        box-shadow: 0 0 0 2px var(blue);
+    }
+
     &:hover {
-        opacity: 0.95;
+        opacity: 0.9;
     }
 
     &:active {
-        opacity: 0.9;
+        opacity: 0.85;
     }
 }
 

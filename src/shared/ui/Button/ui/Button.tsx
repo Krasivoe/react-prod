@@ -3,6 +3,7 @@ import { classNames } from '@/shared/lib/class-names/classNames';
 import cls from './Button.module.scss';
 import { DefaultSize, DefaultSizeValue } from '@/shared/types/components';
 import { ButtonThemeValue } from '@/shared/ui/Button/types';
+import { UI_FOCUS_CLASS } from '@/shared/constants/common';
 
 interface ButtonProps extends PropsWithChildren, ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
@@ -31,7 +32,7 @@ export const Button: FC<ButtonProps> = (props) => {
         [cls.square]: square,
     };
 
-    const additional: string[] = [className, cls[theme], cls[size]];
+    const additional: string[] = [className, cls[theme], cls[size], UI_FOCUS_CLASS];
 
     return (
         <button
