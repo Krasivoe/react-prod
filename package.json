@@ -17,7 +17,8 @@
     "test:ui:update": "lost-pixel update",
     "test:ui:report": "node scripts/generate-lostpixel-report.js",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "storybook:build": "storybook build -c ./config/storybook"
+    "storybook:build": "storybook build -c ./config/storybook",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -75,7 +76,8 @@
     "webpack": "^5.105.0",
     "webpack-bundle-analyzer": "^5.3.0",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.3"
+    "webpack-dev-server": "^5.2.3",
+    "husky": "^8.0.0"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
