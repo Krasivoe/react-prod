@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
+import type { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 import { classNames } from '@/shared/lib/class-names/classNames';
 import cls from './Button.module.scss';
 import { DefaultSize, DefaultSizeValue } from '@/shared/types/components';
@@ -12,9 +12,10 @@ interface ButtonProps extends PropsWithChildren, ButtonHTMLAttributes<HTMLButton
     size?: DefaultSizeValue
     onlyIcon?: boolean;
     square?: boolean;
+    disabled?: boolean;
 }
 
-export const Button: FC<ButtonProps> = (props) => {
+export const Button = (props: ButtonProps) => {
     const {
         className,
         children,
@@ -23,6 +24,7 @@ export const Button: FC<ButtonProps> = (props) => {
         size = DefaultSize.M,
         onlyIcon,
         square,
+        disabled,
         ...otherProps
     } = props;
 
@@ -30,6 +32,7 @@ export const Button: FC<ButtonProps> = (props) => {
         [cls[theme]]: true,
         [cls.onlyIcon]: onlyIcon,
         [cls.square]: square,
+        [cls.disabled]: disabled,
     };
 
     const additional: string[] = [className, cls[theme], cls[size], UI_FOCUS_CLASS];
@@ -38,6 +41,7 @@ export const Button: FC<ButtonProps> = (props) => {
         <button
             type="button"
             className={classNames((cls.button), mods, additional)}
+            disabled={disabled}
             {...otherProps}
         >
             {children ?? label}

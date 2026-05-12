@@ -1,14 +1,13 @@
 import React, {
-    ReactNode, useCallback, useEffect, useMemo, useRef, useState,
+    type PropsWithChildren, useCallback, useEffect, useMemo, useRef, useState,
 } from 'react';
 import cls from './Modal.module.scss';
 import { classNames } from '@/shared/lib/class-names/classNames';
 import { ClassModifiers } from '@/shared/types/common';
 import { Portal } from '@/shared/ui/Portal';
 
-interface ModalProps {
+interface ModalProps extends PropsWithChildren {
     className?: string;
-    children?: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
     closeOnEsc?: boolean;

@@ -27,6 +27,21 @@ export const PrimaryDark: Story = {
     },
 };
 
+export const OnlyIcon: Story = {
+    args: {
+        children: '+',
+        onlyIcon: true,
+    },
+};
+
+export const Disabled: Story = {
+    args: {
+        children: 'Button',
+        theme: ButtonTheme.OUTLINE,
+        disabled: true,
+    },
+};
+
 export const Clear: Story = {
     args: {
         theme: ButtonTheme.CLEAR,
@@ -138,7 +153,7 @@ export const BackgroundInvertedDark: Story = {
 
 export const Square: Story = {
     args: {
-        theme: ButtonTheme.BACKGROUND,
+        theme: ButtonTheme.OUTLINE,
         label: '>',
         square: true,
     },
@@ -146,7 +161,7 @@ export const Square: Story = {
 
 export const SquareXS: Story = {
     args: {
-        theme: ButtonTheme.BACKGROUND,
+        theme: ButtonTheme.OUTLINE,
         label: '>',
         square: true,
         size: DefaultSize.XS,
@@ -155,7 +170,7 @@ export const SquareXS: Story = {
 
 export const SquareS: Story = {
     args: {
-        theme: ButtonTheme.BACKGROUND,
+        theme: ButtonTheme.OUTLINE,
         label: '>',
         square: true,
         size: DefaultSize.S,
@@ -164,7 +179,7 @@ export const SquareS: Story = {
 
 export const SquareL: Story = {
     args: {
-        theme: ButtonTheme.BACKGROUND,
+        theme: ButtonTheme.OUTLINE,
         label: '>',
         square: true,
         size: DefaultSize.L,
@@ -173,7 +188,7 @@ export const SquareL: Story = {
 
 export const SquareDark: Story = {
     args: {
-        theme: ButtonTheme.BACKGROUND,
+        theme: ButtonTheme.OUTLINE,
         label: '>',
         square: true,
     },

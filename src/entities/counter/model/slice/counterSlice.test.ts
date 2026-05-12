@@ -1,5 +1,5 @@
 import { counterReducer, counterActions } from './counterSlice';
-import { CounterSchema } from '@/entities/counter';
+import { CounterSchema } from '../types/counterSchema';
 
 describe('counterSlice', () => {
     let state: Partial<CounterSchema>;
@@ -9,20 +9,23 @@ describe('counterSlice', () => {
     });
 
     test('should decrement counter', () => {
-        const reducer = counterReducer(state as CounterSchema, counterActions.decrement());
+        const action = counterActions.decrement();
+        const newState = counterReducer(state as CounterSchema, action);
 
-        expect(reducer).toEqual({ value: 9 });
+        expect(newState).toEqual({ value: 9 });
     });
 
     test('should increment counter', () => {
-        const reducer = counterReducer(state as CounterSchema, counterActions.increment());
+        const action = counterActions.increment();
+        const newState = counterReducer(state as CounterSchema, action);
 
-        expect(reducer).toEqual({ value: 11 });
+        expect(newState).toEqual({ value: 11 });
     });
 
     test('should work with empty state', () => {
-        const reducer = counterReducer(undefined, counterActions.increment());
+        const action = counterActions.increment();
+        const newState = counterReducer(undefined, action);
 
-        expect(reducer).toEqual({ value: 1 });
+        expect(newState).toEqual({ value: 1 });
     });
 });

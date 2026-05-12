@@ -6,6 +6,9 @@
   "У нас что-то сломалось...": "Something's broken....",
   "Обновить страницу": "Reload page",
   "Войти": "Sign in",
+  "Выйти": "Sign out",
   "Введите username": "input username",
-  "Введите пароль": "input password"
+  "Введите пароль": "input password",
+  "Форма авторизации": "Authorization form",
+  "Неверный логин или пароль": "Invalid username or password"
 }

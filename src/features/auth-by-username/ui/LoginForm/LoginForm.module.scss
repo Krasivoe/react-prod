@@ -1,18 +1,24 @@
-.login-form,
-.login-fields {
-    display: flex;
-    flex-direction: column;
+.title,
+.fields {
+    margin-bottom: var(--space-l);
 }
 
-.login-form {
-    row-gap: var(--space-l);
+.form {
+    display: flex;
+    flex-direction: column;
     min-width: 400px;
 }
 
-.login-fields {
+.fields {
+    display: flex;
+    flex-direction: column;
     row-gap: var(--space-m);
 }
 
-.login-btn {
+.error {
+    margin-bottom: var(--space-s);
+}
+
+.submit {
     margin-left: auto;
 }

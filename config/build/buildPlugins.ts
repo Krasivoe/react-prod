@@ -24,6 +24,7 @@ export const buildPlugins = ({ paths, isDev }: BuildOptions): webpack.WebpackPlu
 
         plugins.push(new BundleAnalyzerPlugin({
             openAnalyzer: false,
+            analyzerPort: 'auto',
         }));
     }
 

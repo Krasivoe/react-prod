@@ -44,7 +44,7 @@ export default ({ config }: StorybookConfig) => {
     config.plugins = config.plugins || [];
     config.plugins.push(
         new webpack.DefinePlugin({
-            __IS_DEV__: JSON.stringify(true),
+            __IS_DEV__: true,
         }),
     );
 

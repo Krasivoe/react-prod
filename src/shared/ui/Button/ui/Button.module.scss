@@ -1,6 +1,6 @@
 .button {
     cursor: pointer;
-    color: var(--color-primary);
+    color: var(--primary-color);
     border-radius: var(--button-radius);
     padding: var(--button-padding);
     height: fit-content;
@@ -20,6 +20,12 @@
 
     &:active {
         opacity: 0.85;
+    }
+
+    &.disabled {
+        pointer-events: none;
+        color: var(--primary-color-disabled);
+        outline-color: var(--primary-color-disabled);
     }
 }
 

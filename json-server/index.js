@@ -18,14 +18,6 @@ server.use(async (req, res, next) => {
     next();
 });
 
-server.use((req, res, next) => {
-    if (!req.headers.authorization) {
-        return res.status(403).json({ message: 'AUTH ERROR' });
-    }
-
-    return next();
-});
-
 // Логин
 server.post('/login', (req, res) => {
     try {
@@ -42,6 +34,14 @@ server.post('/login', (req, res) => {
 
         return res.status(500).json({ message: e.message });
     }
+});
+
+server.use((req, res, next) => {
+    if (!req.headers.authorization) {
+        return res.status(403).json({ message: 'AUTH ERROR' });
+    }
+
+    return next();
 });
 
 server.use(router);
