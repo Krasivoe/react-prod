@@ -1,24 +1,21 @@
 import '@/app/styles/index.scss';
-import type { Decorator, StoryContext } from '@storybook/react';
-import { ReducersMapObject } from '@reduxjs/toolkit';
-import { StateSchema, StoreProvider } from '@/app/providers/store-provider';
+import type { Decorator } from '@storybook/react';
+import { AsyncReducersMap, StateSchema, StoreProvider } from '@/app/providers/store-provider';
 import { loginReducer } from '@/features/auth-by-username/model/slice/loginSlice';
+import { profileReducer } from '@/entities/profile';
 
 interface StoreDecoratorParameters {
     state: Partial<StateSchema>;
-    asyncReducers?: Partial<ReducersMapObject<StateSchema>>
+    asyncReducers?: AsyncReducersMap
 }
 
-type StoreDecoratorContext = StoryContext & {
-    parameters: StoryContext['parameters'] & StoreDecoratorParameters;
-};
-
-const ASYNC_REDUCERS: Partial<ReducersMapObject<StateSchema>> = {
+const ASYNC_REDUCERS: AsyncReducersMap = {
     loginForm: loginReducer,
+    profile: profileReducer,
 };
 
-export const StoreDecorator: Decorator = (StoryComponent, { parameters }: StoreDecoratorContext) => {
-    const { state, asyncReducers } = parameters;
+export const StoreDecorator: Decorator = (StoryComponent, { parameters }) => {
+    const { state, asyncReducers } = parameters as StoreDecoratorParameters;
 
     return (
         <StoreProvider initialState={state} asyncReducers={{ ...ASYNC_REDUCERS, ...asyncReducers }}>

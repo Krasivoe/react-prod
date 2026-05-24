@@ -1,9 +1,10 @@
 import { ButtonHTMLAttributes, memo, PropsWithChildren } from 'react';
-import { classNames } from '@/shared/lib/class-names/classNames';
+import { ClassMods, classNames } from '@/shared/lib/class-names/classNames';
 import cls from './Button.module.scss';
 import { DefaultSize, DefaultSizeValue } from '@/shared/types/components';
-import { ButtonThemeValue } from '@/shared/ui/Button/types';
+import { ButtonTheme, ButtonThemeValue } from '@/shared/ui/Button/types';
 import { UI_FOCUS_CLASS } from '@/shared/constants/common';
+import { Undefinable } from '@/shared/types/common';
 
 interface ButtonProps extends PropsWithChildren, ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
@@ -19,7 +20,7 @@ export const Button = memo((props: ButtonProps) => {
     const {
         className,
         children,
-        theme,
+        theme = ButtonTheme.OUTLINE,
         label,
         size = DefaultSize.M,
         onlyIcon,
@@ -28,14 +29,14 @@ export const Button = memo((props: ButtonProps) => {
         ...otherProps
     } = props;
 
-    const mods: Record<string, boolean> = {
+    const mods: ClassMods = {
         [cls[theme]]: true,
         [cls.onlyIcon]: onlyIcon,
         [cls.square]: square,
         [cls.disabled]: disabled,
     };
 
-    const additional: string[] = [className, cls[theme], cls[size], UI_FOCUS_CLASS];
+    const additional: Undefinable<string>[] = [className, cls[theme], cls[size], UI_FOCUS_CLASS];
 
     return (
         <button

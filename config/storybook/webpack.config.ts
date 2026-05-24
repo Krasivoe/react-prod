@@ -27,8 +27,11 @@ export default ({ config }: StorybookConfig) => {
         config.resolve.extensions?.push('.ts', '.tsx');
     }
 
+    config.module = config.module || {};
+    config.module.rules = config.module.rules || [];
+
     // eslint-disable-next-line no-param-reassign
-    config.module!.rules = config.module!.rules!.map((rule) => {
+    config.module.rules = config.module.rules.map((rule) => {
         if ((typeof rule !== 'object' || rule === null)) return rule;
 
         if (rule.test && /svg/.test(rule.test.toString())) {
@@ -38,13 +41,14 @@ export default ({ config }: StorybookConfig) => {
         return rule;
     });
 
-    config.module.rules?.push(buildSvgLoader());
-    config.module.rules?.push(buildCssLoader(true));
+    config.module?.rules.push(buildSvgLoader());
+    config.module?.rules.push(buildCssLoader(true));
 
     config.plugins = config.plugins || [];
     config.plugins.push(
         new webpack.DefinePlugin({
             __IS_DEV__: true,
+            __API__: JSON.stringify(''),
         }),
     );
 

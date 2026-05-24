@@ -1,0 +1,19 @@
+.profile-card {
+    padding: var(--space-l);
+    border: 2px solid var(--inverted-bg-color);
+    border-radius: var(--control-radius-m);
+}
+
+.header {
+    display: flex;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-m);
+}
+
+.edit-btn {
+    margin-left: auto;
+}

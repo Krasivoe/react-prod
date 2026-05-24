@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import { classNames } from '@/shared/lib/class-names/classNames';
 import cls from './Input.module.scss';
+import { Nullable } from '@/shared/types/common';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 
@@ -27,7 +28,7 @@ export const Input = memo((props: InputProps) => {
     const [isFocused, setIsFocused] = useState(false);
     const [caretPosition, setCaretPosition] = useState(0);
 
-    const inputRef = useRef(null);
+    const inputRef = useRef<Nullable<HTMLInputElement>>(null);
 
     useEffect(() => {
         if (!autoFocus) return;

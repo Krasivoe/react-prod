@@ -8,7 +8,7 @@ import { Input } from '@/shared/ui/Input';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/login-by-username/loginByUsername';
 import { Text, TextTheme } from '@/shared/ui/Text';
-import { ReducersList } from '@/app/providers/store-provider';
+import { AsyncReducersMap } from '@/app/providers/store-provider';
 import { getLoginUsername } from '../../model/selectors/get-login-username/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/get-login-password/getLoginPassword';
 import { getLoginError } from '../../model/selectors/get-login-error/getLoginError';
@@ -21,7 +21,7 @@ interface LoginFormProps {
     onSuccess?: () => void;
 }
 
-const initialReducers: ReducersList = {
+const reducers: AsyncReducersMap = {
     loginForm: loginReducer,
 };
 
@@ -46,11 +46,11 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const onLoginClick = useCallback(async () => {
         const res = await dispatch(loginByUsername({ username, password }));
 
-        if (res.meta.requestStatus === 'fulfilled') onSuccess();
+        if (res.meta.requestStatus === 'fulfilled' && onSuccess) onSuccess();
     }, [dispatch, username, password, onSuccess]);
 
     return (
-        <DynamicModuleLoader reducers={initialReducers}>
+        <DynamicModuleLoader reducers={reducers}>
             <div className={classNames((cls.form), {}, [className])}>
                 <Text className={cls.title} title={t('Форма авторизации')} />
 

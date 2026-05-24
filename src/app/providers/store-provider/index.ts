@@ -5,8 +5,9 @@ export { createReduxStore } from './config/store';
 export type {
     StateSchema,
     StateSchemaKey,
-    ReducersList,
+    AsyncReducersMap,
     ReduxStoreWithManager,
+    ThunkConfig,
 } from './types/schema';
 
 export type { AppDispatch } from './config/store';
