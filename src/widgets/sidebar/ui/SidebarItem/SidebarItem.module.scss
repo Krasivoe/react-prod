@@ -1,0 +1,21 @@
+.link {
+    display: flex;
+    align-items: start;
+    text-decoration: none;
+    column-gap: var(--space-s);
+}
+
+.link-icon {
+    fill: var(--inverted-primary-color);
+}
+
+.collapsed {
+    .link {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link-text {
+        display: none;
+    }
+}

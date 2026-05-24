@@ -6,7 +6,7 @@ function MainPage() {
 
     return (
         <div>
-            {t('Главная страница')}
+            {t('Главная')}
 
             <Counter />
         </div>
