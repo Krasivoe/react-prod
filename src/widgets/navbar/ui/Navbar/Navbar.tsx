@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/class-names/classNames';
@@ -12,7 +12,7 @@ interface NavbarProps {
     className?: string;
 }
 
-export function Navbar({ className }: NavbarProps) {
+export const Navbar = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation();
 
     const [isAuthModal, setIsAuthModal] = useState(false);
@@ -58,4 +58,4 @@ export function Navbar({ className }: NavbarProps) {
                 && <LoginModal isOpen={isAuthModal} onClose={onClose} />}
         </div>
     );
-}
+});

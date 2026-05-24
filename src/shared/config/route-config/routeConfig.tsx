@@ -1,8 +1,8 @@
 import type { RouteProps } from 'react-router-dom';
-import { AboutPage } from '@/pages/about';
-import MainPage from '@/pages/main/ui/MainPage';
 import type { ValuesOf } from '@/shared/types/common';
 import { NotFoundPage } from '@/pages/not-found';
+import { MainPage } from '@/pages/main';
+import { AboutPage } from '@/pages/about';
 import { ProfilePage } from '@/pages/profile';
 
 export const AppRoutes = {
