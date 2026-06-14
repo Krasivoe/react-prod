@@ -1,6 +1,20 @@
 {
   "Профиль": "Profile",
   "Редактировать": "Edit",
+  "Отменить": "Cancel",
+  "Сохранить": "Save",
+  "Произошла ошибка при загрузке данных": "An error occurred when uploading data",
+  "Попробуйте обновить страницу": "Try refreshing the page",
   "Имя": "Firstname",
-  "Фамилия": "Lastname"
+  "Фамилия": "Lastname",
+  "Возраст": "Age",
+  "Город": "City",
+  "Имя пользователя": "Username",
+  "Ссылка на аватар": "Link to the avatar",
+  "аватар": "avatar",
+  "Серверная ошибка при сохранении": "Server error while saving",
+  "Данные не указаны": "Data not provided",
+  "Имя и фамилия обязательны": "First and last name are required",
+  "Некорректный возраст": "Incorrect age",
+  "Регион обязателен": "country is required"
 }

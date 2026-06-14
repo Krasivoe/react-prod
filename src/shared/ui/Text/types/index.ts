@@ -6,3 +6,11 @@ export const TextTheme = {
 } as const;
 
 export type TextThemeValue = ValuesOf<typeof TextTheme>
+
+export const TextAlign = {
+    LEFT: 'left',
+    CENTER: 'center',
+    RIGHT: 'right',
+} as const;
+
+export type TextAlignValue = ValuesOf<typeof TextAlign>;

@@ -7,11 +7,3 @@ export const Currency = {
 } as const;
 
 export type CurrencyValue = ValuesOf<typeof Currency>;
-
-export const County = {
-    RUSSIA: 'Russia',
-    BELARUS: 'Belarus',
-    KAZAKHSTAN: 'Kazakhstan',
-} as const;
-
-export type CountyValue = ValuesOf<typeof County>;

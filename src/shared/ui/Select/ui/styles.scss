@@ -1,0 +1,58 @@
+.ui-select {
+    --select-color: var(--primary-color);
+    --select-height: auto;
+    --select-option-color: var(--inverted-primary-color);
+    --select-option-bg-color: var(--inverted-bg-color);
+
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xs);
+
+    &__select {
+        height: var(--select-height);
+        border-radius: var(--control-radius-s);
+        background: none;
+        outline: none;
+        color: var(--select-color);
+        padding: var(--select-padding);
+        border: 1px solid var(--select-color);
+    }
+
+    &__option {
+        color: var(--select-option-color);
+        background: var(--select-option-bg-color);
+    }
+
+    &_size {
+        &_xs {
+            --select-padding: var(--space-3xs) var(--space-s) var(--space-3xs) var(--space-3xs);
+            --select-radius: var(--control-radius-xs);
+
+            font: var(--font-xs);
+        }
+
+        &_s {
+            --select-padding: var(--space-3xs) var(--space-s) var(--space-3xs) var(--space-3xs);
+            --select-radius: var(--control-radius-s);
+            --select-height: var(--space-3xl);
+
+            font: var(--font-s);
+        }
+
+        &_m {
+            --select-padding: var(--space-xs) var(--space-s) var(--space-xs) var(--space-xs);
+            --select-radius: var(--control-radius-s);
+            --select-height: var(--space-4xl);
+
+            font: var(--font-m);
+        }
+
+        &_l {
+            --select-padding: var(--space-xs) var(--space-s) var(--space-xs) var(--space-xs);
+            --select-radius: var(--control-radius-s);
+            --select-height: var(--space-5xl);
+
+            font: var(--font-l);
+        }
+    }
+}

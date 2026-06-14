@@ -9,6 +9,7 @@ export interface SidebarItemData {
     text: string;
     textNS: string;
     Icon: React.FC<React.SVGProps<SVGSVGElement>>;
+    authOnly?: boolean;
 }
 
 export const SidebarItemList: SidebarItemData[] = [
@@ -29,5 +30,6 @@ export const SidebarItemList: SidebarItemData[] = [
         text: 'Профиль',
         textNS: 'profile',
         Icon: ProfileIcon,
+        authOnly: true,
     },
 ];

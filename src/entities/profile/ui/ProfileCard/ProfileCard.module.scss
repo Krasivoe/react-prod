@@ -2,18 +2,29 @@
     padding: var(--space-l);
     border: 2px solid var(--inverted-bg-color);
     border-radius: var(--control-radius-m);
+    width: 100%;
 }
 
-.header {
+.loading,
+.error {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
 }
 
 .data {
     display: flex;
     flex-direction: column;
-    row-gap: var(--space-m);
+    row-gap: var(--space-s);
 }
 
-.edit-btn {
-    margin-left: auto;
+.avatar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.editing {
+    border: 2px solid var(--inverted-primary-color);
 }

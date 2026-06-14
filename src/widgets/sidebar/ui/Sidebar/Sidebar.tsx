@@ -18,7 +18,11 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     const onToggle = () => setCollapsed((prev) => !prev);
 
     const sidebarLinks = useMemo(() => SidebarItemList.map((item) => (
-        <SidebarItem key={item.path} item={item} collapsed={collapsed}>
+        <SidebarItem
+            key={item.path}
+            item={item}
+            collapsed={collapsed}
+        >
             {item.text}
         </SidebarItem>
     )), [collapsed]);

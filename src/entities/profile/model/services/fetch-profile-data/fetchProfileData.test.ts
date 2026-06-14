@@ -1,18 +1,17 @@
-import axios from 'axios';
 import { Profile } from '../../types/profile';
-import { Currency } from '@/shared/types/model';
 import { TestAsyncClass } from '@/shared/config/tests/test-async-thunk/TestAsyncClass';
-import { fetchProfileData } from '@/entities/profile';
+import { fetchProfileData } from './fetchProfileData';
+import { Currency } from '@/entities/currency';
+import { Country } from '@/entities/country';
 
 jest.mock('axios');
 
-const mockedAxios = jest.mocked(axios);
 const mockProfile: Profile = {
     first: 'firstname',
     lastname: 'lastname',
     age: 1,
     currency: Currency.RUB,
-    country: 'Russia',
+    country: Country.RUSSIA,
     city: 'Tyumen',
     username: 'admin',
     avatar: '',
@@ -24,7 +23,7 @@ describe('fetchProfileData', () => {
         thunk.extra.api.get.mockReturnValue(Promise.resolve({ data: mockProfile }));
         const result = await thunk.callThunk();
 
-        expect(mockedAxios.get).toHaveBeenCalled();
+        expect(thunk.extra.api.get).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
         expect(result.payload).toEqual(mockProfile);
     });
@@ -36,7 +35,7 @@ describe('fetchProfileData', () => {
         thunk.extra.api.get.mockRejectedValue(new Error(errorMsg));
         const result = await thunk.callThunk();
 
-        expect(mockedAxios.get).toHaveBeenCalled();
+        expect(thunk.extra.api.get).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('rejected');
         expect(result.payload).toEqual(errorMsg);
     });

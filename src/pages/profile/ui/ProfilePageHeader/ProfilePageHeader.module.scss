@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+}

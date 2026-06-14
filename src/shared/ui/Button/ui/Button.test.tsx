@@ -15,7 +15,7 @@ describe('Button', () => {
 
         const button = screen.getByText('TEST');
 
-        expect(button).toHaveClass('clear');
+        expect(button).toHaveClass('ui-button_theme_clear');
     });
 
     test('should render with label', () => {

@@ -2,10 +2,11 @@ import type { ValuesOf } from '@/shared/types/common';
 
 export const ButtonTheme = {
     CLEAR: 'clear',
-    CLEAR_INVERTED: 'clearInverted',
+    CLEAR_INVERTED: 'clear-inverted',
     OUTLINE: 'outline',
+    OUTLINE_RED: 'outline-red',
     BACKGROUND: 'background',
-    BACKGROUND_INVERTED: 'backgroundInverted',
+    BACKGROUND_INVERTED: 'background-inverted',
 } as const;
 
 export type ButtonThemeValue = ValuesOf<typeof ButtonTheme>;

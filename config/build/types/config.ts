@@ -7,6 +7,8 @@ export const BuildMode = {
 
 export type BuildModeValue = ValuesOf<typeof BuildMode>;
 
+export type ProjectVariableValue = 'frontend' | 'storybook' | 'jest';
+
 export interface BuildPaths {
     entry: string;
     build: string;
@@ -20,6 +22,7 @@ export interface BuildOptions {
     isDev: boolean;
     port: number;
     apiUrl: string;
+    project: ProjectVariableValue;
 }
 
 export interface BuildEnv {

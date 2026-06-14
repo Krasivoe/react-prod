@@ -34,7 +34,7 @@ module.exports = {
         }],
         'i18next/no-literal-string': ['error', {
             markupOnly: true,
-            ignoreAttribute: ['to', 'href', 'path', 'as', 'target', 'data-testid', 'label'],
+            ignoreAttribute: ['to', 'href', 'path', 'as', 'target', 'data-testid'],
         }],
         'max-len': ['error', { code: 120, ignoreComments: true }],
         'jsx-a11y/no-static-element-interactions': 'off',
@@ -43,10 +43,13 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
         'no-undef': 'off',
+        'no-redeclare': 'off',
+        '@typescript-eslint/no-redeclare': 'error',
     },
     globals: {
         __IS_DEV__: true,
         __API__: true,
+        __PROJECT__: true,
     },
     overrides: [
         {

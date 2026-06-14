@@ -1,0 +1,37 @@
+.ui-text {
+    --title-color: var(--primary-color);
+    --text-color: var(--secondary-color);
+    --title-fz: var(--font-l);
+    --text-fz: var(--font-m);
+
+    &__title {
+        font: var(--title-fz);
+        color: var(--title-color);
+    }
+
+    &__text {
+        font: var(--text-fz);
+        color: var(--text-color);
+    }
+
+    &_theme {
+        &_error {
+            --title-color: var(--red-light);
+            --text-color: var(--red-dark);
+        }
+    }
+
+    &_align {
+        &_left {
+            text-align: left;
+        }
+
+        &_center {
+            text-align: center;
+        }
+
+        &_right {
+            text-align: right;
+        }
+    }
+}

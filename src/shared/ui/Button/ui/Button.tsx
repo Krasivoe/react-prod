@@ -1,10 +1,9 @@
 import { ButtonHTMLAttributes, memo, PropsWithChildren } from 'react';
-import { ClassMods, classNames } from '@/shared/lib/class-names/classNames';
-import cls from './Button.module.scss';
+import { AdditionalClasses, ClassMods, classNames } from '@/shared/lib/class-names/classNames';
+import './styles.scss';
 import { DefaultSize, DefaultSizeValue } from '@/shared/types/components';
 import { ButtonTheme, ButtonThemeValue } from '@/shared/ui/Button/types';
 import { UI_FOCUS_CLASS } from '@/shared/constants/common';
-import { Undefinable } from '@/shared/types/common';
 
 interface ButtonProps extends PropsWithChildren, ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
@@ -30,18 +29,22 @@ export const Button = memo((props: ButtonProps) => {
     } = props;
 
     const mods: ClassMods = {
-        [cls[theme]]: true,
-        [cls.onlyIcon]: onlyIcon,
-        [cls.square]: square,
-        [cls.disabled]: disabled,
+        'ui-button_only-icon': onlyIcon,
+        'ui-button_square': square,
+        'ui-button_disabled': disabled,
     };
 
-    const additional: Undefinable<string>[] = [className, cls[theme], cls[size], UI_FOCUS_CLASS];
+    const additionalClasses: AdditionalClasses = [
+        className,
+        theme && `ui-button_theme_${theme}`,
+        size && `ui-button_size_${size}`,
+        UI_FOCUS_CLASS,
+    ];
 
     return (
         <button
             type="button"
-            className={classNames((cls.button), mods, additional)}
+            className={classNames('ui-button', mods, additionalClasses)}
             disabled={disabled}
             {...otherProps}
         >
