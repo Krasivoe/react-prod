@@ -17,8 +17,8 @@ const preview: Preview = {
 
     decorators: [
         AppProviderDecorator,
-        RouterDecorator,
         StoreDecorator,
+        RouterDecorator,
     ],
 };
 

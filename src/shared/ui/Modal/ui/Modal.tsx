@@ -2,8 +2,8 @@ import React, {
     type PropsWithChildren, useCallback, useEffect, useMemo, useRef, useState,
 } from 'react';
 import cls from './Modal.module.scss';
-import { classNames } from '@/shared/lib/class-names/classNames';
-import { ClassModifiers } from '@/shared/types/common';
+import { ClassMods, classNames } from '@/shared/lib/class-names/classNames';
+import { Nullable } from '@/shared/types/common';
 import { Portal } from '@/shared/ui/Portal';
 
 interface ModalProps extends PropsWithChildren {
@@ -29,7 +29,7 @@ export const Modal = (props: ModalProps) => {
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
 
-    const timerRef = useRef<ReturnType<typeof setTimeout>>(null);
+    const timerRef = useRef<Nullable<ReturnType<typeof setTimeout>>>(null);
 
     const shouldRender = useMemo(() => !lazy || isMounted, [isMounted, lazy]);
 
@@ -63,13 +63,13 @@ export const Modal = (props: ModalProps) => {
         }
 
         return () => {
-            clearTimeout(timerRef.current);
+            if (timerRef.current) clearTimeout(timerRef.current);
 
             document.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpen, onKeyDown, closeOnEsc]);
 
-    const mods: ClassModifiers = {
+    const mods: ClassMods = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };

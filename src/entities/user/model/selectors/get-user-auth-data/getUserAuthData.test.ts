@@ -1,4 +1,3 @@
-import { DeepPartial } from '@/shared/types/tests';
 import { StateSchema } from '@/app/providers/store-provider';
 import { getUserAuthData } from './getUserAuthData';
 

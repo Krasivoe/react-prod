@@ -1,6 +1,6 @@
 import { userActions, userReducer } from './userSlice';
 import { UserSchema } from '@/entities/user';
-import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
+import { USER_LOCAL_STORAGE_KEY } from '@/shared/constants/localStorage';
 
 describe('userSlice', () => {
     const mockUser = {
@@ -35,7 +35,7 @@ describe('userSlice', () => {
 
     describe('initAuthData', () => {
         test('should set authData from localStorage if user exists', () => {
-            localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(mockUser));
+            localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(mockUser));
 
             const action = userActions.initAuthData();
             const newState = userReducer({}, action);
@@ -59,7 +59,7 @@ describe('userSlice', () => {
             const newState = userReducer(state, action);
 
             expect(newState.authData).toBeUndefined();
-            expect(localStorage.getItem(USER_LOCALSTORAGE_KEY)).toBeNull();
+            expect(localStorage.getItem(USER_LOCAL_STORAGE_KEY)).toBeNull();
         });
     });
 });

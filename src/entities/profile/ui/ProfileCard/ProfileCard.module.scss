@@ -1,0 +1,30 @@
+.profile-card {
+    padding: var(--space-l);
+    border: 2px solid var(--inverted-bg-color);
+    border-radius: var(--control-radius-m);
+    width: 100%;
+}
+
+.loading,
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-s);
+}
+
+.avatar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.editing {
+    border: 2px solid var(--inverted-primary-color);
+}

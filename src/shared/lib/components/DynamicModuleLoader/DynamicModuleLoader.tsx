@@ -1,13 +1,10 @@
 import { type PropsWithChildren, useEffect } from 'react';
 import { useStore } from 'react-redux';
-import { Reducer } from '@reduxjs/toolkit';
-import { ReducersList, ReduxStoreWithManager, StateSchemaKey } from '@/app/providers/store-provider';
+import { AsyncReducersMap, ReduxStoreWithManager, StateSchemaKey } from '@/app/providers/store-provider';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
-type ReducersListEntry = [StateSchemaKey, Reducer];
-
 interface DynamicModuleLoaderProps extends PropsWithChildren {
-    reducers: ReducersList
+    reducers: AsyncReducersMap
     removeAfterUnmount?: boolean;
 }
 
@@ -23,20 +20,20 @@ export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        Object.entries(reducers).forEach(([name, reducer]: ReducersListEntry) => {
-            store.reducerManager.add(name, reducer);
-        });
+        Object.entries(reducers).forEach(([name, reducer]) => {
+            store.reducerManager.add(name as StateSchemaKey, reducer);
 
-        dispatch({ type: '@INIT loginForm reducer' });
+            dispatch({ type: `@INIT ${name} reducer` });
+        });
 
         return () => {
             if (!removeAfterUnmount) return;
 
-            Object.entries(reducers).forEach(([name, _reducer]: ReducersListEntry) => {
-                store.reducerManager.remove(name);
-            });
+            Object.entries(reducers).forEach(([name, _reducer]) => {
+                store.reducerManager.remove(name as StateSchemaKey);
 
-            dispatch({ type: '@DESTROY loginForm reducer' });
+                dispatch({ type: `@DESTROY ${name as StateSchemaKey} reducer` });
+            });
         };
         // eslint-disable-next-line
     }, []);

@@ -1,0 +1,144 @@
+@mixin clear-theme($color, $background) {
+    --button-color: #{$color};
+
+    &:hover {
+        --button-hover-bg-color: #{$background};
+
+        &.only-icon {
+            --button-bg-color: none;
+        }
+    }
+}
+
+@mixin background-theme($color, $background) {
+    --button-color: #{$color};
+    --button-bg-color: #{$background};
+    --button-hover-bg-color: #{$background};
+}
+
+.ui-button {
+    --button-color: var(--primary-color);
+    --button-hover-color: var(--primary-color);
+    --button-bg-color: none;
+    --button-hover-bg-color: none;
+    --button-outline-color: var(--primary-color);
+
+    cursor: pointer;
+    color: var(--button-color);
+    border-radius: var(--button-radius);
+    padding: var(--button-padding);
+    background: var(--button-bg-color);
+    height: fit-content;
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity var(--transition-default);
+
+    &:focus {
+        box-shadow: 0 0 0 2px var(blue);
+    }
+
+    &:hover {
+        background: var(--button-hover-bg-color);
+        opacity: 0.9;
+    }
+
+    &:active {
+        opacity: 0.85;
+    }
+
+    &_theme {
+        &_clear,
+        &_clear-inverted {
+            --button-bg-color: none;
+
+            border: none;
+            outline: none;
+            transition: var(--transition-default);
+        }
+
+        &_clear {
+            @include clear-theme(var(--primary-color), var(--primary-color-hover));
+        }
+
+        &_clear-inverted {
+            @include clear-theme(var(--inverted-primary-color), var(--inverted-primary-color-hover));
+        }
+
+        &_outline,
+        &_outline-red {
+            --button-color: var(--primary-color);
+            --button-bg-color: none;
+
+            outline: 1px solid var(--button-outline-color);
+        }
+
+        &_outline-red {
+            --button-color: var(--red-light);
+            --button-outline-color: var(--red-light);
+        }
+
+        &_background,
+        &_background-inverted {
+            border: none;
+            outline: none;
+        }
+
+        &_background {
+            @include background-theme(var(--primary-color), var(--bg-color));
+        }
+
+        &_background-inverted {
+            @include background-theme(var(--inverted-primary-color), var(--inverted-bg-color));
+        }
+    }
+
+    &_size {
+        &_xs {
+            --button-padding: var(--space-3xs) var(--space-xs);
+            --button-radius: var(--control-radius-xs);
+            --button-square-size: var(--space-2xl);
+
+            font: var(--font-xs);
+        }
+
+        &_s {
+            --button-padding: var(--space-2xs) var(--space-s);
+            --button-radius: var(--control-radius-s);
+            --button-square-size: var(--space-3xl);
+
+            height: var(--space-3xl);
+            font: var(--font-s);
+        }
+
+        &_m {
+            --button-padding: var(--space-xs) var(--space-m);
+            --button-radius: var(--control-radius-s);
+            --button-square-size: var(--space-4xl);
+
+            font: var(--font-m);
+        }
+
+        &_l {
+            --button-padding: var(--space-s) var(--space-l);
+            --button-radius: var(--control-radius-s);
+            --button-square-size: var(--space-5xl);
+
+            font: var(--font-l);
+        }
+    }
+
+    &_square {
+        width: var(--button-square-size);
+        height: var(--button-square-size);
+        padding: 0;
+    }
+
+    &_disabled {
+        pointer-events: none;
+
+        --button-color: var(--primary-color-disabled);
+        --button-outline-color: var(--primary-color-disabled);
+    }
+}

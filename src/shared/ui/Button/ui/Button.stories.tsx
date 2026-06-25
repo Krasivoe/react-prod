@@ -83,6 +83,13 @@ export const Outline: Story = {
     },
 };
 
+export const OutlineRed: Story = {
+    args: {
+        theme: ButtonTheme.OUTLINE_RED,
+        label: 'Button',
+    },
+};
+
 export const OutlineXS: Story = {
     args: {
         theme: ButtonTheme.OUTLINE,

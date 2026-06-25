@@ -1,4 +1,4 @@
-import { type PropsWithChildren } from 'react';
+import { memo, type PropsWithChildren } from 'react';
 import { Link, type LinkProps } from 'react-router-dom';
 import { classNames } from '@/shared/lib/class-names/classNames';
 import type { ValuesOf } from '@/shared/types/common';
@@ -16,7 +16,7 @@ interface AppLinkProps extends PropsWithChildren, LinkProps {
     theme?: AppLinkThemeValue;
 }
 
-export const AppLink = (props: AppLinkProps) => {
+export const AppLink = memo((props: AppLinkProps) => {
     const {
         to,
         children,
@@ -34,4 +34,4 @@ export const AppLink = (props: AppLinkProps) => {
             {children}
         </Link>
     );
-};
+});

@@ -23,7 +23,9 @@ export const Counter = () => {
                 {counterValue}
             </h1>
 
+            {/* eslint-disable-next-line i18next/no-literal-string */}
             <Button data-testid="increment-btn" onClick={increment} label="increment" />
+            {/* eslint-disable-next-line i18next/no-literal-string */}
             <Button data-testid="decrement-btn" onClick={decrement} label="decrement" />
         </div>
     );

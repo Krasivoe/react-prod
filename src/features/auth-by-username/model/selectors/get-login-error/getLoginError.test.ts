@@ -1,6 +1,5 @@
 import { StateSchema } from '@/app/providers/store-provider';
 import { getLoginError } from './getLoginError';
-import { DeepPartial } from '@/shared/types/tests';
 
 describe('getLoginError', () => {
     test('should return error', () => {

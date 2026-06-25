@@ -1,8 +1,8 @@
-import type { ButtonHTMLAttributes, PropsWithChildren } from 'react';
-import { classNames } from '@/shared/lib/class-names/classNames';
-import cls from './Button.module.scss';
+import { ButtonHTMLAttributes, memo, PropsWithChildren } from 'react';
+import { AdditionalClasses, ClassMods, classNames } from '@/shared/lib/class-names/classNames';
+import './styles.scss';
 import { DefaultSize, DefaultSizeValue } from '@/shared/types/components';
-import { ButtonThemeValue } from '@/shared/ui/Button/types';
+import { ButtonTheme, ButtonThemeValue } from '@/shared/ui/Button/types';
 import { UI_FOCUS_CLASS } from '@/shared/constants/common';
 
 interface ButtonProps extends PropsWithChildren, ButtonHTMLAttributes<HTMLButtonElement> {
@@ -15,11 +15,11 @@ interface ButtonProps extends PropsWithChildren, ButtonHTMLAttributes<HTMLButton
     disabled?: boolean;
 }
 
-export const Button = (props: ButtonProps) => {
+export const Button = memo((props: ButtonProps) => {
     const {
         className,
         children,
-        theme,
+        theme = ButtonTheme.OUTLINE,
         label,
         size = DefaultSize.M,
         onlyIcon,
@@ -28,23 +28,27 @@ export const Button = (props: ButtonProps) => {
         ...otherProps
     } = props;
 
-    const mods: Record<string, boolean> = {
-        [cls[theme]]: true,
-        [cls.onlyIcon]: onlyIcon,
-        [cls.square]: square,
-        [cls.disabled]: disabled,
+    const mods: ClassMods = {
+        'ui-button_only-icon': onlyIcon,
+        'ui-button_square': square,
+        'ui-button_disabled': disabled,
     };
 
-    const additional: string[] = [className, cls[theme], cls[size], UI_FOCUS_CLASS];
+    const additionalClasses: AdditionalClasses = [
+        className,
+        theme && `ui-button_theme_${theme}`,
+        size && `ui-button_size_${size}`,
+        UI_FOCUS_CLASS,
+    ];
 
     return (
         <button
             type="button"
-            className={classNames((cls.button), mods, additional)}
+            className={classNames('ui-button', mods, additionalClasses)}
             disabled={disabled}
             {...otherProps}
         >
             {children ?? label}
         </button>
     );
-};
+});
