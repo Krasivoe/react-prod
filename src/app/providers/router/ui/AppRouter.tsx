@@ -1,35 +1,37 @@
-import React, { memo, Suspense, useMemo } from 'react';
+import React, {
+    memo, Suspense, useCallback,
+} from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import { PageLoader } from '@/widgets/page-loader';
-import { routeConfig } from '@/shared/config/route-config/routeConfig';
-import { getUserAuthData } from '@/entities/user';
+import { AppRouterProps, routeConfig } from '@/shared/config/route-config/routeConfig';
+import { RequiredAuth } from '@/app/providers/router/ui/RequiredAuth';
 
 export const AppRouter = memo(() => {
-    const isAuth = useSelector(getUserAuthData);
+    const renderWithWrapper = useCallback((route: AppRouterProps) => {
+        const element = (
+            <Suspense fallback={<PageLoader />}>
+                <div className="page-wrapper">
+                    {route.element}
+                </div>
+            </Suspense>
+        );
 
-    const routes = useMemo(
-        () => Object.values(routeConfig).filter((route) => !route.authOnly || !!isAuth),
-        [isAuth],
-    );
+        return (
+            <Route
+                key={route.path}
+                path={route.path}
+                element={
+                    route.authOnly
+                        ? <RequiredAuth>{element}</RequiredAuth>
+                        : element
+                }
+            />
+        );
+    }, []);
 
     return (
         <Routes>
-            {
-                routes.map(({ element, path }) => (
-                    <Route
-                        key={path}
-                        element={(
-                            <Suspense fallback={<PageLoader />}>
-                                <div className="page-wrapper">
-                                    {element}
-                                </div>
-                            </Suspense>
-                        )}
-                        path={path}
-                    />
-                ))
-            }
+            {Object.values(routeConfig).map(renderWithWrapper)}
         </Routes>
     );
 });

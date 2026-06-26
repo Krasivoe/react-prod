@@ -17,9 +17,7 @@ describe('userSlice', () => {
             const action = userActions.setAuthData(mockUser);
             const newState = userReducer({}, action);
 
-            expect(newState).toEqual({
-                authData: mockUser,
-            });
+            expect(newState.authData).toEqual(mockUser);
         });
 
         test('should override existing authData', () => {
@@ -47,8 +45,10 @@ describe('userSlice', () => {
             const action = userActions.initAuthData();
             const newState = userReducer({}, action);
 
-            expect(newState.authData).toBeUndefined();
-            expect(newState).toEqual({});
+            expect(newState).toEqual({
+                authData: undefined,
+                _mounted: true,
+            });
         });
     });
 
