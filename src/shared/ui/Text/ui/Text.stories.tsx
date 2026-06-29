@@ -1,11 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { Text } from './Text';
 import { Theme } from '@/app/providers/theme-provider';
-import { TextTheme } from '@/shared/ui/Text/types';
+import { TextSize, TextTheme } from '@/shared/ui/Text/types';
 
 const meta = {
     title: 'shared/Text',
     component: Text,
+    parameters: {
+        position: 'initial',
+    },
 } satisfies Meta<typeof Text>;
 
 export default meta;
@@ -13,18 +16,22 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-    parameters: {
-        position: 'initial',
-    },
     args: {
         title: 'Title lorem ipsun',
         text: 'Description description description description description',
     },
 };
 
-export const PrimaryDark: Story = {
+export const SizeL: Story = {
+    args: {
+        title: 'Title lorem ipsun',
+        text: 'Description description description description description',
+        size: TextSize.L,
+    },
+};
+
+export const Dark: Story = {
     parameters: {
-        position: 'initial',
         theme: Theme.DARK,
     },
     args: {
@@ -34,9 +41,6 @@ export const PrimaryDark: Story = {
 };
 
 export const TextError: Story = {
-    parameters: {
-        position: 'initial',
-    },
     args: {
         title: 'Title lorem ipsun',
         text: 'Description description description description description',
@@ -45,9 +49,6 @@ export const TextError: Story = {
 };
 
 export const OnlyTitle: Story = {
-    parameters: {
-        position: 'initial',
-    },
     args: {
         title: 'Title lorem ipsun',
     },
@@ -55,7 +56,6 @@ export const OnlyTitle: Story = {
 
 export const OnlyTitleDark: Story = {
     parameters: {
-        position: 'initial',
         theme: Theme.DARK,
     },
     args: {
@@ -64,9 +64,6 @@ export const OnlyTitleDark: Story = {
 };
 
 export const OnlyText: Story = {
-    parameters: {
-        position: 'initial',
-    },
     args: {
         text: 'Description description description description description',
     },
@@ -74,7 +71,6 @@ export const OnlyText: Story = {
 
 export const OnlyTextDark: Story = {
     parameters: {
-        position: 'initial',
         theme: Theme.DARK,
     },
     args: {

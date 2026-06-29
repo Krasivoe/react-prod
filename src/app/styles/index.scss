@@ -19,8 +19,11 @@ body {
 }
 
 .page-wrapper {
+    height: calc(100dvh - var(--navbar-height));
+    overflow-y: auto;
     flex-grow: 1;
-    padding: var(--page-wrapper-padding);
+    width: 100%;
+    padding: var(--page-wrapper-padding) var(--page-wrapper-padding) var(--page-wrapper-padding) var(--space-5xl);
 }
 
 .mix-focus:focus,

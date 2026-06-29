@@ -1,5 +1,5 @@
 import './styles.scss';
-import { CSSProperties, useMemo } from 'react';
+import { CSSProperties, memo, useMemo } from 'react';
 import { classNames } from '@/shared/lib/class-names/classNames';
 
 interface AvatarProps {
@@ -9,7 +9,7 @@ interface AvatarProps {
     alt?: string
 }
 
-export const Avatar = (props: AvatarProps) => {
+export const Avatar = memo((props: AvatarProps) => {
     const {
         className,
         src,
@@ -30,4 +30,4 @@ export const Avatar = (props: AvatarProps) => {
             alt={alt}
         />
     );
-};
+});

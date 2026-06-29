@@ -1,9 +1,15 @@
 .sidebar {
+    --width: var(--sidebar-width);
+
     height: calc(100dvh - var(--navbar-height));
-    width: var(--sidebar-width);
+    width: var(--width);
     background: var(--inverted-bg-color);
     position: relative;
     transition: width var(--transition-default);
+}
+
+.content-wrapper {
+    min-width: var(--width);
 }
 
 .content {
@@ -28,7 +34,7 @@
 }
 
 .collapsed {
-    width: var(--sidebar-width-collapsed);
+    --width: var(--sidebar-width-collapsed);
 
     .links {
         align-items: center;

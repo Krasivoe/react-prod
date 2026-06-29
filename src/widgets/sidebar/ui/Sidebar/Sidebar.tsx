@@ -29,6 +29,20 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
 
     return (
         <div data-testid="sidebar" className={classNames((cls.sidebar), { [cls.collapsed]: collapsed }, [className])}>
+            <div className={cls.contentWrapper}>
+                <div className={cls.content}>
+                    <div className={cls.links}>
+                        {sidebarLinks}
+                    </div>
+
+                    <div className={cls.switchers}>
+                        <ThemeSwitcher />
+
+                        <LangSwitcher short={collapsed} />
+                    </div>
+                </div>
+            </div>
+
             <Button
                 data-testid="sidebar-toggle"
                 onClick={onToggle}
@@ -39,18 +53,6 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             >
                 {collapsed ? '>' : '<'}
             </Button>
-
-            <div className={cls.content}>
-                <div className={cls.links}>
-                    {sidebarLinks}
-                </div>
-
-                <div className={cls.switchers}>
-                    <ThemeSwitcher />
-
-                    <LangSwitcher short={collapsed} />
-                </div>
-            </div>
         </div>
     );
 });

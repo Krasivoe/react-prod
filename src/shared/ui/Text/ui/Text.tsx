@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { AdditionalClasses, classNames } from '@/shared/lib/class-names/classNames';
 import './styles.scss';
 import {
-    TextAlign, TextAlignValue, TextTheme, TextThemeValue,
+    TextAlign, TextAlignValue, TextSize, TextSizeValue, TextTheme, TextThemeValue,
 } from '@/shared/ui/Text/types';
 
 interface TextProps {
@@ -10,7 +10,8 @@ interface TextProps {
     title?: string;
     text?: string;
     theme?: TextThemeValue;
-    align?: TextAlignValue
+    align?: TextAlignValue;
+    size?: TextSizeValue;
 }
 
 export const Text = memo((props: TextProps) => {
@@ -20,12 +21,14 @@ export const Text = memo((props: TextProps) => {
         text,
         theme = TextTheme.PRIMARY,
         align = TextAlign.LEFT,
+        size = TextSize.M,
     } = props;
 
     const additionalClasses: AdditionalClasses = [
         className,
         `ui-text_theme_${theme}`,
         `ui-text_align_${align}`,
+        `ui-text_size_${size}`,
     ];
 
     return (
