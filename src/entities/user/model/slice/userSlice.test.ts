@@ -5,7 +5,7 @@ import { USER_LOCAL_STORAGE_KEY } from '@/shared/constants/localStorage';
 describe('userSlice', () => {
     const mockUser = {
         id: 'test id',
-        userName: 'test name',
+        username: 'test name',
     };
 
     beforeEach(() => {
@@ -22,7 +22,7 @@ describe('userSlice', () => {
 
         test('should override existing authData', () => {
             const state: UserSchema = {
-                authData: { id: 'old', userName: 'olduser' },
+                authData: { id: 'old', username: 'olduser' },
             };
             const action = userActions.setAuthData(mockUser);
             const newState = userReducer(state, action);

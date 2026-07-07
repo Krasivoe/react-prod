@@ -36,7 +36,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
             <div className={cls.header}>
                 <Avatar src={comment.user.avatar} size={AVATAR_SIZE} />
 
-                <Text title={comment.user.userName} />
+                <Text title={comment.user.username} />
             </div>
 
             <Text text={comment.text} />

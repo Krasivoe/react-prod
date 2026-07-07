@@ -17,7 +17,7 @@ export const Normal: Story = {
         comment: {
             id: '1',
             text: 'comment text',
-            user: { id: '1', userName: 'Alex', avatar },
+            user: { id: '1', username: 'Alex', avatar },
         },
     },
 };

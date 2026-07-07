@@ -22,12 +22,12 @@ export const Normal: Story = {
             {
                 id: '1',
                 text: 'first comment text',
-                user: { id: '1', userName: 'Alex', avatar: avatar1 },
+                user: { id: '1', username: 'Alex', avatar: avatar1 },
             },
             {
                 id: '2',
                 text: 'second comment text',
-                user: { id: '1', userName: 'Bred', avatar: avatar2 },
+                user: { id: '1', username: 'Bred', avatar: avatar2 },
             },
         ],
     },

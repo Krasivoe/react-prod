@@ -42,7 +42,7 @@ const comments: Comment[] = [
         text: 'first comment text',
         user: {
             id: '1',
-            userName: 'Alex',
+            username: 'Alex',
             avatar: 'https://i.pinimg.com/originals/a7/08/84/a708844ad1e257878ff9f2acc19a38e4.jpg?nii=t',
         },
     },
@@ -51,7 +51,7 @@ const comments: Comment[] = [
         text: 'second comment text',
         user: {
             id: '1',
-            userName: 'Bred',
+            username: 'Bred',
             avatar: 'https://i.pinimg.com/originals/2c/e1/24/2ce1240a17226a34e3f1d6a3eb88217f.png?nii=t',
         },
     },
