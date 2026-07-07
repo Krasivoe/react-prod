@@ -103,7 +103,7 @@
       "id": "2",
       "text": "some comment 2",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     },
     {
       "id": "3",
@@ -115,13 +115,14 @@
   "users": [
     {
       "id": "1",
-      "username": "admin",
+      "userName": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://img.freepik.com/premium-psd/3d-render-avatar-character_23-2150611743.jpg?semt=ais_hybrid&w=740"
     },
     {
       "id": "2",
-      "username": "user",
+      "userName": "user",
       "password": "123",
       "role": "USER"
     }
@@ -133,7 +134,7 @@
     "currency": "EUR",
     "country": "Belarus",
     "city": "Saint-Petersburg",
-    "username": "admin",
+    "userName": "admin",
     "avatar": "https://i.pinimg.com/200x150/ec/36/9d/ec369d455c2b5a0e8d1673aca15ff4a7.jpg"
   }
 }

@@ -4,6 +4,9 @@ import { AsyncReducersMap, StateSchema, StoreProvider } from '@/app/providers/st
 import { loginReducer } from '@/features/auth-by-username/model/slice/loginSlice';
 import { profileReducer } from '@/entities/profile';
 import { articleDetailsReducer } from '@/entities/article/model/slice/ArticleDetailsSlice';
+import {
+    articleDetailsCommentsReducer,
+} from '@/pages/articles/model/article-details-page/slice/articleDetailsCommentsSlice';
 
 interface StoreDecoratorParameters {
     state: Partial<StateSchema>;
@@ -14,6 +17,7 @@ const ASYNC_REDUCERS: AsyncReducersMap = {
     loginForm: loginReducer,
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
+    articleDetailsComments: articleDetailsCommentsReducer,
 };
 
 export const StoreDecorator: Decorator = (StoryComponent, { parameters }) => {

@@ -14,7 +14,7 @@ import { getLoginPassword } from '../../model/selectors/get-login-password/getLo
 import { getLoginError } from '../../model/selectors/get-login-error/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/get-login-is-loading/getLoginIsLoading';
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/use-app-dispatch/useAppDispatch';
 
 interface LoginFormProps {
     className?: string;

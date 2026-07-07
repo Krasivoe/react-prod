@@ -4,7 +4,7 @@ import { useCallback } from 'react';
 import cls from './ProfilePageHeader.module.scss';
 import { Text } from '@/shared/ui/Text';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/use-app-dispatch/useAppDispatch';
 import { getProfileReadonly, profileActions, updateProfileData } from '@/entities/profile';
 import { classNames } from '@/shared/lib/class-names/classNames';
 

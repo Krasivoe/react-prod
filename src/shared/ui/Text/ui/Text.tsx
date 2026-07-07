@@ -33,7 +33,11 @@ export const Text = memo((props: TextProps) => {
 
     return (
         <div className={classNames('ui-text', {}, additionalClasses)}>
-            {title && <p className="ui-text__title">{title}</p>}
+            {title && (
+                <p className={classNames('ui-text__title', { 'ui-text__title_without-subtitle': !text })}>
+                    {title}
+                </p>
+            )}
 
             {text && <p className="ui-text__text">{text}</p>}
         </div>

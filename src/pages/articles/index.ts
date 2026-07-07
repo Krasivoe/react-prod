@@ -1,7 +1,4 @@
-export {
-    ArticlesPageAsync as ArticlesPage,
-} from '@/pages/articles/ui/articles-page/ArticlesPage.async';
+export { ArticlesPageAsync as ArticlesPage } from './ui/articles-page/ArticlesPage.async';
+export { ArticleDetailsPageAsync as ArticleDetailsPage } from './ui/article-details-page/ArticleDetailsPage.async';
 
-export {
-    ArticleDetailsPageAsync as ArticleDetailsPage,
-} from '@/pages/articles/ui/article-details-page/ArticleDetailsPage.async';
+export { ArticleDetailsCommentsSchema } from './model/article-details-page/types/ArticleDetailsCommentsSchema';

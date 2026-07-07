@@ -13,7 +13,7 @@ import {
     profileReducer,
     ProfileCard, getProfileValidateErrors, ValidateProfileError,
 } from '@/entities/profile';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/use-app-dispatch/useAppDispatch';
 import { ProfilePageHeader } from '../ProfilePageHeader/ProfilePageHeader';
 import { CurrencyValue } from '@/entities/currency';
 import { CountryValue } from '@/entities/country';

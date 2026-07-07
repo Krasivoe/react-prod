@@ -5,7 +5,7 @@ import { Sidebar } from '@/widgets/sidebar';
 import { AppRouter } from '@/app/providers/router';
 import { classNames } from '@/shared/lib/class-names/classNames';
 import { getUserMounted, userActions } from '@/entities/user';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/use-app-dispatch/useAppDispatch';
 
 export function App() {
     const dispatch = useAppDispatch();

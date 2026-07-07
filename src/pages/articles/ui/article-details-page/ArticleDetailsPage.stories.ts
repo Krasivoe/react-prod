@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import ArticleDetailsPage from './ArticleDetailsPage';
 import { Article, ArticleBlockType, ArticleType } from '@/entities/article';
+import { Comment } from '@/entities/comment';
 
 const article: Article = {
     id: '1',
@@ -35,6 +36,27 @@ const article: Article = {
     ],
 };
 
+const comments: Comment[] = [
+    {
+        id: '1',
+        text: 'first comment text',
+        user: {
+            id: '1',
+            userName: 'Alex',
+            avatar: 'https://i.pinimg.com/originals/a7/08/84/a708844ad1e257878ff9f2acc19a38e4.jpg?nii=t',
+        },
+    },
+    {
+        id: '2',
+        text: 'second comment text',
+        user: {
+            id: '1',
+            userName: 'Bred',
+            avatar: 'https://i.pinimg.com/originals/2c/e1/24/2ce1240a17226a34e3f1d6a3eb88217f.png?nii=t',
+        },
+    },
+];
+
 const meta = {
     title: 'pages/ArticleDetailsPage',
     component: ArticleDetailsPage,
@@ -44,8 +66,25 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Normal: Story = {
     parameters: {
-        state: { articleDetails: { data: article } },
+        state: {
+            articleDetails: { data: article },
+            articleDetailsComments: {
+                ids: comments.map((comment) => comment.id),
+                entities: {
+                    1: comments[0],
+                    2: comments[1],
+                },
+            },
+        },
+    },
+};
+
+export const EmptyComments: Story = {
+    parameters: {
+        state: {
+            articleDetails: { data: article },
+        },
     },
 };

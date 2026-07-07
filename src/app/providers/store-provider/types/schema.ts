@@ -9,6 +9,7 @@ import { LoginSchema } from '@/features/auth-by-username';
 import { KeysOf, Undefinable } from '@/shared/types/common';
 import { ProfileSchema } from '@/entities/profile';
 import { ArticleDetailsSchema } from '@/entities/article';
+import { ArticleDetailsCommentsSchema } from '@/pages/articles';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -17,7 +18,8 @@ export interface StateSchema {
     // async
     loginForm?: LoginSchema
     profile?: ProfileSchema;
-    articleDetails?: ArticleDetailsSchema
+    articleDetails?: ArticleDetailsSchema;
+    articleDetailsComments?: ArticleDetailsCommentsSchema;
 }
 
 export type StateSchemaKey = KeysOf<StateSchema>;

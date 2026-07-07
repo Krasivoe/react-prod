@@ -41,6 +41,10 @@
         font: var(--title-fz);
         color: var(--title-color);
         margin-bottom: var(--title-margin);
+
+        &_without-subtitle {
+            margin-bottom: 0;
+        }
     }
 
     &__text {

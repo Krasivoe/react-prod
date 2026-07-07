@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/class-names/classNames';
 import cls from './ArticleDetails.module.scss';
@@ -10,9 +10,8 @@ import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import { ArticleCodeBlock } from '../ArticleBlocks/ArticleCodeBlock/ArticleCodeBlock';
 import { ArticleImageBlock } from '../ArticleBlocks/ArticleImageBlock/ArticleImageBlock';
 import { ArticleTextBlock } from '../ArticleBlocks/ArticleTextBlock/ArticleTextBlock';
-import { PROJECT } from '@/shared/constants/global';
 import { fetchArticleById } from '../../model/services/fetch-article-by-id/fetchArticleById';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/use-app-dispatch/useAppDispatch';
 import {
     getArticleDetailsData,
     getArticleDetailsError,
@@ -20,12 +19,13 @@ import {
 } from '../../model/selectors/article-detail/articleDetails';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import {
-    Text, TextTheme, TextAlign, TextSize,
+    Text, TextAlign, TextSize, TextTheme,
 } from '@/shared/ui/Text';
 import { Avatar } from '@/shared/ui/Avatar';
 import EyeIcon from '@/shared/assets/icons/common/eye.svg';
 import CalendarIcon from '@/shared/assets/icons/common/calendar.svg';
 import { Icon } from '@/shared/ui/Icon';
+import { useInitialEffect } from '@/shared/lib/hooks/use-initial-effect/useInitialEffect';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -63,11 +63,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         }
     }, []);
 
-    useEffect(() => {
-        if (__PROJECT__ === PROJECT.storybook) return;
-
-        dispatch(fetchArticleById(id));
-    }, [dispatch, id]);
+    useInitialEffect(() => dispatch(fetchArticleById(id)), [id]);
 
     let content;
 
