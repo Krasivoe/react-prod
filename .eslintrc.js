@@ -36,7 +36,11 @@ module.exports = {
             markupOnly: true,
             ignoreAttribute: ['to', 'href', 'path', 'as', 'target', 'data-testid'],
         }],
-        'max-len': ['error', { code: 120, ignoreComments: true }],
+        'max-len': ['error', {
+            code: 120,
+            ignoreComments: true,
+            ignorePattern: '^\\s*(import|export)\\s|^\\s*\\}\\s*from\\s',
+        }],
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
         'react-hooks/rules-of-hooks': 'error',

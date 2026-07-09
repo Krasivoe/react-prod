@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/class-names/classNames';
 import cls from './LoginForm.module.scss';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
-import { loginActions, loginReducer } from '../../model/slice/loginSlice';
+import { loginActions, loginReducer } from '../../model/slices/loginSlice';
 import { loginByUsername } from '../../model/services/login-by-username/loginByUsername';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { AsyncReducersMap } from '@/app/providers/store-provider';

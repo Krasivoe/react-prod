@@ -1,4 +1,4 @@
-export { userReducer, userActions } from './model/slice/userSlice';
+export { userReducer, userActions } from './model/slices/userSlice';
 
 export { getUserAuthData } from './model/selectors/get-user-auth-data/getUserAuthData';
 export { getUserMounted } from './model/selectors/get-user-mounted/getUserMounted';

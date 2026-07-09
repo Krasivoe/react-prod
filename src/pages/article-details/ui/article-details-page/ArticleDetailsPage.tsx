@@ -14,11 +14,11 @@ import { useAppDispatch } from '@/shared/lib/hooks/use-app-dispatch/useAppDispat
 import { useInitialEffect } from '@/shared/lib/hooks/use-initial-effect/useInitialEffect';
 import {
     articleDetailsCommentsReducer, getArticleComments,
-} from '../../model/article-details-page/slice/articleDetailsCommentsSlice';
+} from '@/pages/article-details/model/article-details-page/slices/articleDetailsCommentsSlice';
 import {
     fetchCommentsByArticleId,
-} from '../../model/article-details-page/services/fetch-comments-by-article-id/fetchCommentsByArticleId';
-import { getArticleCommentsIsLoading } from '../../model/article-details-page/selectors/comments';
+} from '@/pages/article-details/model/article-details-page/services/fetch-comments-by-article-id/fetchCommentsByArticleId';
+import { getArticleCommentsIsLoading } from '@/pages/article-details/model/article-details-page/selectors/comments';
 
 interface ArticleDetailsPageProps {
     className?: string;

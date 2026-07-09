@@ -9,7 +9,7 @@ import { LoginSchema } from '@/features/auth-by-username';
 import { KeysOf, Undefinable } from '@/shared/types/common';
 import { ProfileSchema } from '@/entities/profile';
 import { ArticleDetailsSchema } from '@/entities/article';
-import { ArticleDetailsCommentsSchema } from '@/pages/articles';
+import { ArticleDetailsCommentsSchema } from '@/pages/article-details';
 
 export interface StateSchema {
     counter: CounterSchema;

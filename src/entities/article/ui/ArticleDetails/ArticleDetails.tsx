@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/class-names/classNames';
 import cls from './ArticleDetails.module.scss';
 import { AsyncReducersMap } from '@/app/providers/store-provider';
-import { articleDetailsReducer } from '../../model/slice/ArticleDetailsSlice';
+import { articleDetailsReducer } from '../../model/slices/ArticleDetailsSlice';
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import { ArticleCodeBlock } from '../ArticleBlocks/ArticleCodeBlock/ArticleCodeBlock';
