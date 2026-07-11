@@ -5,7 +5,7 @@ const avatar1 = 'https://i.pinimg.com/originals/a7/08/84/a708844ad1e257878ff9f2a
 const avatar2 = 'https://i.pinimg.com/originals/2c/e1/24/2ce1240a17226a34e3f1d6a3eb88217f.png?nii=t';
 
 const meta = {
-    title: 'entities/CommentList',
+    title: 'entities/comment/CommentList',
     component: CommentList,
     parameters: {
         position: 'initial',
@@ -30,6 +30,12 @@ export const Normal: Story = {
                 user: { id: '1', username: 'Bred', avatar: avatar2 },
             },
         ],
+    },
+};
+
+export const Loading: Story = {
+    args: {
+        isLoading: true,
     },
 };
 

@@ -4,8 +4,11 @@ import { CommentCard } from './CommentCard';
 const avatar = 'https://i.pinimg.com/736x/19/fc/9c/19fc9c8583020e327bfceff047590523.jpg';
 
 const meta = {
-    title: 'entities/CommentCard',
+    title: 'entities/comment/CommentCard',
     component: CommentCard,
+    parameters: {
+        position: 'initial',
+    },
 } satisfies Meta<typeof CommentCard>;
 
 export default meta;
@@ -23,7 +26,6 @@ export const Normal: Story = {
 };
 
 export const Loading: Story = {
-    // @ts-ignore
     args: {
         isLoading: true,
     },
