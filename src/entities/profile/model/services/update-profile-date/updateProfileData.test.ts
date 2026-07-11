@@ -7,6 +7,7 @@ import { Country } from '@/entities/country';
 jest.mock('axios');
 
 const mockProfile: Profile = {
+    id: '1',
     first: 'firstname',
     lastname: 'lastname',
     age: 1,

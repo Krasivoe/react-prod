@@ -14,3 +14,10 @@ export const TextAlign = {
 } as const;
 
 export type TextAlignValue = ValuesOf<typeof TextAlign>;
+
+export const TextSize = {
+    M: 'm',
+    L: 'l',
+};
+
+export type TextSizeValue = ValuesOf<typeof TextSize>

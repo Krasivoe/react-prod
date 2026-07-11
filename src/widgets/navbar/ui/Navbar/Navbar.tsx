@@ -6,7 +6,7 @@ import cls from './Navbar.module.scss';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { LoginModal } from '@/features/auth-by-username';
 import { getUserAuthData, userActions } from '@/entities/user';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/use-app-dispatch/useAppDispatch';
 
 interface NavbarProps {
     className?: string;

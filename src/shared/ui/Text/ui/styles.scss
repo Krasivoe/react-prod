@@ -1,17 +1,19 @@
 .ui-text {
     --title-color: var(--primary-color);
     --text-color: var(--secondary-color);
-    --title-fz: var(--font-l);
-    --text-fz: var(--font-m);
 
-    &__title {
-        font: var(--title-fz);
-        color: var(--title-color);
-    }
+    &_size {
+        &_m {
+            --title-fz: var(--font-l);
+            --text-fz: var(--font-m);
+            --title-margin: var(--space-4xs);
+        }
 
-    &__text {
-        font: var(--text-fz);
-        color: var(--text-color);
+        &_l {
+            --title-fz: var(--font-xl);
+            --text-fz: var(--font-l);
+            --title-margin: var(--space-3xs);
+        }
     }
 
     &_theme {
@@ -33,5 +35,20 @@
         &_right {
             text-align: right;
         }
+    }
+
+    &__title {
+        font: var(--title-fz);
+        color: var(--title-color);
+        margin-bottom: var(--title-margin);
+
+        &_without-subtitle {
+            margin-bottom: 0;
+        }
+    }
+
+    &__text {
+        font: var(--text-fz);
+        color: var(--text-color);
     }
 }

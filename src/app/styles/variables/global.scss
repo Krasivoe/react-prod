@@ -7,7 +7,7 @@
     --font-xl: var(--font-size-xl) / var(--font-line-xs) var(--font-family-main);
     --color-control-focus: rgb(0 120 210 / 30%);
     --color-control-active: rgb(0 120 210 / 50%);
-    --page-wrapper-padding: 20px;
+    --page-wrapper-padding: var(--space-l);
     --transition-default: 0.2s ease;
 
     // Текст

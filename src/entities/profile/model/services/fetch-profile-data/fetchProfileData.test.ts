@@ -7,6 +7,7 @@ import { Country } from '@/entities/country';
 jest.mock('axios');
 
 const mockProfile: Profile = {
+    id: '1',
     first: 'firstname',
     lastname: 'lastname',
     age: 1,
@@ -21,7 +22,7 @@ describe('fetchProfileData', () => {
     test('should fetch profile successfully', async () => {
         const thunk = new TestAsyncClass(fetchProfileData);
         thunk.extra.api.get.mockReturnValue(Promise.resolve({ data: mockProfile }));
-        const result = await thunk.callThunk();
+        const result = await thunk.callThunk('1');
 
         expect(thunk.extra.api.get).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
@@ -33,7 +34,7 @@ describe('fetchProfileData', () => {
 
         const thunk = new TestAsyncClass(fetchProfileData);
         thunk.extra.api.get.mockRejectedValue(new Error(errorMsg));
-        const result = await thunk.callThunk();
+        const result = await thunk.callThunk('1');
 
         expect(thunk.extra.api.get).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('rejected');

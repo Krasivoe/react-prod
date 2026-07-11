@@ -2,11 +2,10 @@ import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 import { ClassMods, classNames } from '@/shared/lib/class-names/classNames';
 import cls from './ProfileCard.module.scss';
-import { Text, TextTheme } from '@/shared/ui/Text';
+import { Text, TextTheme, TextAlign } from '@/shared/ui/Text';
 import { Input, InputType } from '@/shared/ui/Input';
 import { Profile } from '../../model/types/profile';
 import { Loader } from '@/shared/ui/Loader';
-import { TextAlign } from '@/shared/ui/Text/types';
 import { Avatar } from '@/shared/ui/Avatar';
 import { CurrencySelect, CurrencyValue } from '@/entities/currency';
 import { CountrySelect, CountryValue } from '@/entities/country';
@@ -80,11 +79,9 @@ export const ProfileCard = (props: ProfileCardProps) => {
     return (
         <div className={classNames((cls.profileCard), mods, [className])}>
             <div className={cls.data}>
-                {data?.avatar && (
-                    <div className={cls.avatar}>
-                        <Avatar src={data?.avatar} alt={t('аватар')} size={100} />
-                    </div>
-                )}
+                <div className={cls.avatar}>
+                    <Avatar src={data?.avatar} alt={t('аватар')} size={100} />
+                </div>
 
                 <Input
                     value={data?.first}

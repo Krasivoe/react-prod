@@ -1,7 +1,7 @@
 import { type PropsWithChildren, useEffect } from 'react';
 import { useStore } from 'react-redux';
 import { AsyncReducersMap, ReduxStoreWithManager, StateSchemaKey } from '@/app/providers/store-provider';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/use-app-dispatch/useAppDispatch';
 
 interface DynamicModuleLoaderProps extends PropsWithChildren {
     reducers: AsyncReducersMap
@@ -12,7 +12,7 @@ export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
     const {
         children,
         reducers,
-        removeAfterUnmount,
+        removeAfterUnmount = true,
     } = props;
 
     const store = useStore() as ReduxStoreWithManager;

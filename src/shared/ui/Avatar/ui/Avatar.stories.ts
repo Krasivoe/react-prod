@@ -18,6 +18,13 @@ export const Default: Story = {
     },
 };
 
+export const Empty: Story = {
+    args: {
+        size: 100,
+        src: undefined,
+    },
+};
+
 export const Small: Story = {
     args: {
         size: 50,

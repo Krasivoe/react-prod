@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/class-names/classNames';
 import cls from './LoginForm.module.scss';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
-import { loginActions, loginReducer } from '../../model/slice/loginSlice';
+import { loginActions, loginReducer } from '../../model/slices/loginSlice';
 import { loginByUsername } from '../../model/services/login-by-username/loginByUsername';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { AsyncReducersMap } from '@/app/providers/store-provider';
@@ -14,7 +14,7 @@ import { getLoginPassword } from '../../model/selectors/get-login-password/getLo
 import { getLoginError } from '../../model/selectors/get-login-error/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/get-login-is-loading/getLoginIsLoading';
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/use-app-dispatch/useAppDispatch';
 
 interface LoginFormProps {
     className?: string;

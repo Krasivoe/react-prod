@@ -1,3 +1,3 @@
 export { Text } from './ui/Text';
 
-export { TextTheme } from './types/index';
+export { TextTheme, TextAlign, TextSize } from './types/index';

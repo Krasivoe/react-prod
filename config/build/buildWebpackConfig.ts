@@ -17,6 +17,7 @@ export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration
             filename: OUTPUT_FILE_NAME,
             path: paths.build,
             clean: true,
+            publicPath: '/',
         },
         plugins: buildPlugins(options),
         module: {

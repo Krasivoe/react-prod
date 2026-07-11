@@ -1,0 +1,17 @@
+.ui-code {
+    border: 1px solid var(--primary-color);
+    padding: var(--space-l);
+    position: relative;
+    background: var(--code-bg);
+    overflow: auto;
+
+    &__copy {
+        position: absolute;
+        right: var(--space-l);
+        top: var(--space-l);
+    }
+
+    &__copy-icon path {
+        stroke: var(--primary-color);
+    }
+}

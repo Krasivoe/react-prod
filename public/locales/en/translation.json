@@ -12,5 +12,7 @@
   "Форма авторизации": "Authorization form",
   "Неверный логин или пароль": "Invalid username or password",
   "Укажите валюту": "Select the currency",
-  "Укажите страну": "Select the country"
+  "Укажите страну": "Select the country",
+  "Введите текст комментария": "Enter the comment text",
+  "Отправить": "Send"
 }

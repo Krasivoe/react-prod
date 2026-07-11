@@ -2,7 +2,7 @@ import { StateSchema } from '@/app/providers/store-provider';
 import { getUserAuthData } from './getUserAuthData';
 
 describe('getUserAuthData', () => {
-    const mockAuthData = { id: '1', userName: 'name' };
+    const mockAuthData = { id: '1', username: 'name' };
 
     test('should return authData', () => {
         const state: DeepPartial<StateSchema> = {
@@ -13,7 +13,7 @@ describe('getUserAuthData', () => {
 
         expect(authData).toEqual({
             id: '1',
-            userName: 'name',
+            username: 'name',
         });
     });
 });
