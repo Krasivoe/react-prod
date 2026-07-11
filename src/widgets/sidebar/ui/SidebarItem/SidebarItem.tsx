@@ -3,7 +3,7 @@ import { memo, PropsWithChildren } from 'react';
 import { useSelector } from 'react-redux';
 import cls from './SidebarItem.module.scss';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
-import { SidebarItemData } from '../../model/items';
+import { SidebarItemData } from '../../model/types/sidebar';
 import { classNames } from '@/shared/lib/class-names/classNames';
 import { getUserAuthData } from '@/entities/user';
 
