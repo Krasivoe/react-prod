@@ -1,0 +1,26 @@
+.ui-app-link {
+    color: var(--primary-color);
+    transition: var(--transition-default);
+
+    &:hover {
+        opacity: 0.9;
+    }
+
+    &:active {
+        opacity: 0.85;
+    }
+
+    &_theme {
+        &_primary {
+            color: var(--primary-color);
+        }
+
+        &_secondary {
+            color: var(--inverted-primary-color);
+        }
+
+        &_red {
+            color: red;
+        }
+    }
+}

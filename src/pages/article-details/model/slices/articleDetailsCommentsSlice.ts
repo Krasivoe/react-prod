@@ -3,6 +3,7 @@ import { fetchCommentsByArticleId } from '../services/fetch-comments-by-article-
 import { Comment } from '@/entities/comment';
 import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
 import { StateSchema } from '@/app/providers/store-provider';
+import { addCommentForArticle } from '../../model/services/add-comment-for-article/addCommentForArticle';
 
 const commentsAdapter = createEntityAdapter<Comment, string>({
     selectId: (comment) => comment.id,
@@ -34,6 +35,11 @@ export const articleDetailsCommentsSlice = createSlice({
             .addCase(fetchCommentsByArticleId.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
+            });
+
+        builder
+            .addCase(addCommentForArticle.fulfilled, (state, action: PayloadAction<Comment>) => {
+                commentsAdapter.addOne(state, action.payload);
             });
     },
 });

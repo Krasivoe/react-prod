@@ -13,6 +13,7 @@ export const ValidateProfileError = {
 export type ValidateProfileErrorValue = ValuesOf<typeof ValidateProfileError>
 
 export interface Profile {
+    id?: string;
     first?: string;
     lastname?: string;
     age?: number;

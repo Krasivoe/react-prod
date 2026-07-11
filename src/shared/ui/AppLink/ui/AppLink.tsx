@@ -1,8 +1,8 @@
 import { memo, type PropsWithChildren } from 'react';
 import { Link, type LinkProps } from 'react-router-dom';
-import { classNames } from '@/shared/lib/class-names/classNames';
+import { AdditionalClasses, classNames } from '@/shared/lib/class-names/classNames';
 import type { ValuesOf } from '@/shared/types/common';
-import cls from './AppLink.module.scss';
+import './styles.scss';
 
 export const AppLinkTheme = {
     PRIMARY: 'primary',
@@ -25,10 +25,15 @@ export const AppLink = memo((props: AppLinkProps) => {
         ...otherProps
     } = props;
 
+    const additionalClasses: AdditionalClasses = [
+        className,
+        theme && `ui-app-link_theme_${theme}`,
+    ];
+
     return (
         <Link
             to={to}
-            className={classNames(cls.appLink, {}, [className, cls[theme]])}
+            className={classNames('ui-app-link', {}, additionalClasses)}
             {...otherProps}
         >
             {children}

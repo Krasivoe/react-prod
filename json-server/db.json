@@ -118,7 +118,7 @@
       "username": "admin",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://img.freepik.com/premium-psd/3d-render-avatar-character_23-2150611743.jpg?semt=ais_hybrid&w=740"
+      "avatar": "https://i.pinimg.com/200x150/ec/36/9d/ec369d455c2b5a0e8d1673aca15ff4a7.jpg"
     },
     {
       "id": "2",
@@ -127,14 +127,27 @@
       "role": "USER"
     }
   ],
-  "profile": {
-    "first": "Danil",
-    "lastname": "Zaytsev",
-    "age": 25,
-    "currency": "EUR",
-    "country": "Belarus",
-    "city": "Saint-Petersburg",
-    "username": "admin",
-    "avatar": "https://i.pinimg.com/200x150/ec/36/9d/ec369d455c2b5a0e8d1673aca15ff4a7.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Danil",
+      "lastname": "Zaytsev",
+      "age": 25,
+      "currency": "EUR",
+      "country": "Belarus",
+      "city": "Saint-Petersburg",
+      "username": "admin",
+      "avatar": "https://i.pinimg.com/200x150/ec/36/9d/ec369d455c2b5a0e8d1673aca15ff4a7.jpg"
+    },
+    {
+      "id": "2",
+      "first": "Maxx",
+      "lastname": "Kriger",
+      "age": 20,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin"
+    }
+  ]
 }

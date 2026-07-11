@@ -6,7 +6,8 @@ import { profileReducer } from '@/entities/profile';
 import { articleDetailsReducer } from '@/entities/article/model/slices/ArticleDetailsSlice';
 import {
     articleDetailsCommentsReducer,
-} from '@/pages/article-details/model/article-details-page/slices/articleDetailsCommentsSlice';
+} from '@/pages/article-details/model/slices/articleDetailsCommentsSlice';
+import { addCommentFormReducer } from '@/features/add-comment-form/model/slices/addCommentFormSlice';
 
 interface StoreDecoratorParameters {
     state: Partial<StateSchema>;
@@ -18,6 +19,7 @@ const ASYNC_REDUCERS: AsyncReducersMap = {
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
     articleDetailsComments: articleDetailsCommentsReducer,
+    addCommentForm: addCommentFormReducer,
 };
 
 export const StoreDecorator: Decorator = (StoryComponent, { parameters }) => {
