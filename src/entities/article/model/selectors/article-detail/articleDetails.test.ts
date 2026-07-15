@@ -12,6 +12,7 @@ import {
 
 const mockArticle: Article = {
     id: '1',
+    user: { id: '1', username: 'Petya' },
     title: 'title',
     subtitle: 'subtitle',
     img: 'imagePath',

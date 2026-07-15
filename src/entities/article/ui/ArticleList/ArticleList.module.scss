@@ -1,0 +1,18 @@
+.article-list {
+    width: 100%;
+    display: flex;
+}
+
+.big {
+    &.article-list {
+        flex-direction: column;
+        row-gap: var(--space-2xl);
+    }
+}
+
+.small {
+    &.article-list {
+        flex-wrap: wrap;
+        gap: var(--space-xl) var(--space-2xl);
+    }
+}

@@ -4,7 +4,7 @@ import { CommentCard } from './CommentCard';
 const avatar = 'https://i.pinimg.com/736x/19/fc/9c/19fc9c8583020e327bfceff047590523.jpg';
 
 const meta = {
-    title: 'entities/comment/CommentCard',
+    title: 'entities/Comment/CommentCard',
     component: CommentCard,
     parameters: {
         position: 'initial',

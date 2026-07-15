@@ -1,4 +1,5 @@
 import { ValuesOf } from '@/shared/types/common';
+import { User } from '@/entities/user';
 
 export const ArticleBlockType = {
     CODE: 'CODE',
@@ -16,6 +17,13 @@ export const ArticleType = {
 } as const;
 
 export type ArticleTypeValue = ValuesOf<typeof ArticleType>;
+
+export const ArticleView = {
+    SMALL: 'small',
+    BIG: 'big',
+} as const;
+
+export type ArticleViewValue = ValuesOf<typeof ArticleView>;
 
 export interface ArticleBlockBase {
     id: string;
@@ -43,6 +51,7 @@ export type ArticleBlock = ArticleCodeBlockData | ArticleImageBlockData | Articl
 
 export interface Article {
     id: string;
+    user: User;
     title: string;
     subtitle: string;
     img: string;

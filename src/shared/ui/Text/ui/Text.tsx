@@ -12,6 +12,7 @@ interface TextProps {
     theme?: TextThemeValue;
     align?: TextAlignValue;
     size?: TextSizeValue;
+    hint?: string;
 }
 
 export const Text = memo((props: TextProps) => {
@@ -22,6 +23,7 @@ export const Text = memo((props: TextProps) => {
         theme = TextTheme.PRIMARY,
         align = TextAlign.LEFT,
         size = TextSize.M,
+        hint,
     } = props;
 
     const additionalClasses: AdditionalClasses = [
@@ -32,7 +34,7 @@ export const Text = memo((props: TextProps) => {
     ];
 
     return (
-        <div className={classNames('ui-text', {}, additionalClasses)}>
+        <div title={hint} className={classNames('ui-text', {}, additionalClasses)}>
             {title && (
                 <p className={classNames('ui-text__title', { 'ui-text__title_without-subtitle': !text })}>
                     {title}
