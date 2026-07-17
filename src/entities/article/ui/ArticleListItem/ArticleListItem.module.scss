@@ -2,6 +2,7 @@
 
 @mixin image($height) {
     width: 100%;
+    height: 100%;
     max-height: #{$height};
     object-fit: cover;
     border-radius: var(--control-radius-xs);
@@ -9,6 +10,7 @@
 
 .article-list-item {
     --article-title-margin: var(--space-xs);
+    --image-height: 200px;
 }
 
 .views {
@@ -69,15 +71,13 @@
     cursor: pointer;
 
     .image-wrapper {
-        --height: var(200px);
-
         width: 100%;
-        height: var(--height);
+        height: var(--image-height);
         position: relative;
     }
 
     .image {
-        @include image(var(--height));
+        @include image(var(--image-height));
     }
 
     .date {
