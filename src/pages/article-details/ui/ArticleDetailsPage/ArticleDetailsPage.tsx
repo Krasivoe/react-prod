@@ -19,6 +19,7 @@ import { AddCommentForm } from '@/features/add-comment-form';
 import { addCommentForArticle } from '../../model/services/add-comment-for-article/addCommentForArticle';
 import { RoutePath } from '@/shared/config/route-config/routeConfig';
 import { Button } from '@/shared/ui/Button';
+import { Page } from '@/shared/ui/Page';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -56,9 +57,9 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     if (!id) {
         return (
-            <div className={classNames(cls.notFound, {}, [className])}>
+            <Page className={classNames(cls.notFound, {}, [className])}>
                 {t('Статья не найдена')}
-            </div>
+            </Page>
         );
     }
 
@@ -66,7 +67,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         <DynamicModuleLoader reducers={reducers}>
             {id
                 ? (
-                    <div className={classNames((cls.articleDetailsPage), {}, [className])}>
+                    <Page className={classNames((cls.articleDetailsPage), {}, [className])}>
                         <Button
                             className={cls.buttonBack}
                             label={t('Назад к списку')}
@@ -85,12 +86,12 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                                 comments={comments}
                             />
                         </div>
-                    </div>
+                    </Page>
                 )
                 : (
-                    <div className={classNames(cls.notFound, {}, [className])}>
+                    <Page className={classNames(cls.notFound, {}, [className])}>
                         {t('Статья не найдена')}
-                    </div>
+                    </Page>
                 )}
         </DynamicModuleLoader>
     );

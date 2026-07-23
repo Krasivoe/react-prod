@@ -36,6 +36,7 @@ const config: Config = {
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
     moduleNameMapper: {
         '\\.svg$': '<rootDir>/config/jest/SvgMock.tsx',
+        '\\.(jpg|jpeg|png)$': '<rootDir>/config/jest/FileMock.ts',
         '\\.s?css$': 'identity-obj-proxy',
         '^@/(.*)$': '<rootDir>/src/$1',
     },

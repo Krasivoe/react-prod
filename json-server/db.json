@@ -99,7 +99,7 @@
       "title": "Python news",
       "subtitle": "Обновления Python",
       "img": "https://content.timeweb.com/assets/087dc252-a843-4d3d-837d-fdabcc54dbea?fit=cover&width=1200&height=600",
-      "views": 1022,
+      "views": 111,
       "userId": "2",
       "createdAt": "26.02.2022",
       "type": [
@@ -171,7 +171,7 @@
       "title": "Kotlin news",
       "subtitle": "Что нового в Kotlin за 2026 год?",
       "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
-      "views": 1022,
+      "views": 909,
       "userId": "1",
       "createdAt": "26.02.2022",
       "type": [
@@ -237,6 +237,188 @@
           ]
         }
       ]
+    },
+    {
+      "id": "4",
+      "title": "Python news",
+      "subtitle": "Обновления Python",
+      "img": "https://content.timeweb.com/assets/087dc252-a843-4d3d-837d-fdabcc54dbea?fit=cover&width=1200&height=600",
+      "views": 1022,
+      "userId": "2",
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "5",
+      "title": "Kotlin news2",
+      "subtitle": "Что нового в Kotlin за 2026 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 92,
+      "userId": "1",
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "6",
+      "title": "Python news11",
+      "subtitle": "Обновления Python",
+      "img": "https://content.timeweb.com/assets/087dc252-a843-4d3d-837d-fdabcc54dbea?fit=cover&width=1200&height=600",
+      "views": 98,
+      "userId": "2",
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "7",
+      "title": "Kotlin news4",
+      "subtitle": "Что нового в Kotlin за 2026 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 555,
+      "userId": "1",
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "8",
+      "title": "Python news3",
+      "subtitle": "Обновления Python",
+      "img": "https://content.timeweb.com/assets/087dc252-a843-4d3d-837d-fdabcc54dbea?fit=cover&width=1200&height=600",
+      "views": 155,
+      "userId": "2",
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "9",
+      "title": "Kotlin news3",
+      "subtitle": "Что нового в Kotlin за 2026 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 12,
+      "userId": "1",
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "10",
+      "title": "Python news12",
+      "subtitle": "Обновления Python",
+      "img": "https://content.timeweb.com/assets/087dc252-a843-4d3d-837d-fdabcc54dbea?fit=cover&width=1200&height=600",
+      "views": 10,
+      "userId": "2",
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "11",
+      "title": "Kotlin news16",
+      "subtitle": "Что нового в Kotlin за 2026 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 55,
+      "userId": "1",
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "12",
+      "title": "Python news111",
+      "subtitle": "Обновления Python",
+      "img": "https://content.timeweb.com/assets/087dc252-a843-4d3d-837d-fdabcc54dbea?fit=cover&width=1200&height=600",
+      "views": 34,
+      "userId": "2",
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "13",
+      "title": "Kotlin news122",
+      "subtitle": "Что нового в Kotlin за 2026 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 22,
+      "userId": "1",
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "14",
+      "title": "Python news133",
+      "subtitle": "Обновления Python",
+      "img": "https://content.timeweb.com/assets/087dc252-a843-4d3d-837d-fdabcc54dbea?fit=cover&width=1200&height=600",
+      "views": 101,
+      "userId": "2",
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "15",
+      "title": "Kotlin news6",
+      "subtitle": "Что нового в Kotlin за 2026 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 1022,
+      "userId": "1",
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "16",
+      "title": "Python news5",
+      "subtitle": "Обновления Python",
+      "img": "https://content.timeweb.com/assets/087dc252-a843-4d3d-837d-fdabcc54dbea?fit=cover&width=1200&height=600",
+      "views": 102,
+      "userId": "2",
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "17",
+      "title": "Kotlin news99",
+      "subtitle": "Что нового в Kotlin за 2026 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 10,
+      "userId": "1",
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": []
     }
   ],
   "comments": [

@@ -20,12 +20,18 @@ import { CurrencyValue } from '@/entities/currency';
 import { CountryValue } from '@/entities/country';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { useInitialEffect } from '@/shared/lib/hooks/use-initial-effect/useInitialEffect';
+import { classNames } from '@/shared/lib/class-names/classNames';
+import { Page } from '@/shared/ui/Page';
+
+interface ProfilePageProps {
+    className?: string;
+}
 
 const reducers: AsyncReducersMap = {
     profile: profileReducer,
 };
 
-const ProfilePage = () => {
+const ProfilePage = ({ className }: ProfilePageProps) => {
     const { t } = useTranslation('profile');
 
     const { id } = useParams<{ id: string }>();
@@ -86,30 +92,32 @@ const ProfilePage = () => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <ProfilePageHeader />
+            <Page className={classNames('', {}, [className])}>
+                <ProfilePageHeader />
 
-            {!!validateErrors?.length && validateErrors.map((err) => (
-                <Text
-                    key={err}
-                    theme={TextTheme.ERROR}
-                    text={validateErrorTranslate[err]}
+                {!!validateErrors?.length && validateErrors.map((err) => (
+                    <Text
+                        key={err}
+                        theme={TextTheme.ERROR}
+                        text={validateErrorTranslate[err]}
+                    />
+                ))}
+
+                <ProfileCard
+                    data={profileForm}
+                    isLoading={isLoading}
+                    error={error}
+                    readonly={readonly}
+                    onChangeFirstName={onChangeFirstName}
+                    onChangeLastName={onChangeLastName}
+                    onChangeAge={onChangeAge}
+                    onChangeCity={onChangeCity}
+                    onChangeUsername={onChangeUsername}
+                    onChangeAvatar={onChangeAvatar}
+                    onChangeCurrency={onChangeCurrency}
+                    onChangeCountry={onChangeCountry}
                 />
-            ))}
-
-            <ProfileCard
-                data={profileForm}
-                isLoading={isLoading}
-                error={error}
-                readonly={readonly}
-                onChangeFirstName={onChangeFirstName}
-                onChangeLastName={onChangeLastName}
-                onChangeAge={onChangeAge}
-                onChangeCity={onChangeCity}
-                onChangeUsername={onChangeUsername}
-                onChangeAvatar={onChangeAvatar}
-                onChangeCurrency={onChangeCurrency}
-                onChangeCountry={onChangeCountry}
-            />
+            </Page>
         </DynamicModuleLoader>
     );
 };
