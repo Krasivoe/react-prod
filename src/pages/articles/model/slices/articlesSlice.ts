@@ -28,6 +28,7 @@ const articlesSlice = createSlice({
         view: ArticleView.SMALL,
         page: 1,
         hasMore: true,
+        _mounted: false,
     }),
     reducers: {
         setView: (state, action: PayloadAction<ArticleViewValue>) => {
@@ -42,6 +43,7 @@ const articlesSlice = createSlice({
 
             state.view = view;
             state.limit = LIMIT_MAP[view];
+            state._mounted = true;
         },
     },
     extraReducers: (builder) => {

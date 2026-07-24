@@ -6,7 +6,7 @@ import { fetchArticlesList } from '../fetch-articles-list/fetchArticlesList';
 
 export const fetchNextArticles = createAsyncThunk<
     void,
-    undefined,
+    void,
     ThunkConfig<string>
 >(
     'articles/fetchNextArticles',

@@ -2,7 +2,6 @@ import {
     EnhancedStore, Reducer, ReducersMapObject, UnknownAction,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { NavigateOptions, To } from 'react-router-dom';
 import { CounterSchema } from '@/entities/counter';
 import { UserSchema } from '@/entities/user';
 import { LoginSchema } from '@/features/auth-by-username';
@@ -45,7 +44,6 @@ export type AsyncReducersMap = {
 
 export interface ThunkExtraArg {
     api: AxiosInstance;
-    navigate?: (to: To, options?: NavigateOptions) => void
 }
 
 export interface ThunkConfig<T> {
