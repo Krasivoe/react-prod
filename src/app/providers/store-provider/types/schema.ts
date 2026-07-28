@@ -11,10 +11,12 @@ import { ArticleDetailsSchema } from '@/entities/article';
 import { ArticleDetailsCommentsSchema } from '@/pages/article-details';
 import { AddCommentFormSchema } from '@/features/add-comment-form';
 import { ArticlesSchema } from '@/pages/articles';
+import { ScrollSaveSchema } from '@/features/scroll-save';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    scrollSave: ScrollSaveSchema;
 
     // async
     loginForm?: LoginSchema
@@ -22,7 +24,7 @@ export interface StateSchema {
     articleDetails?: ArticleDetailsSchema;
     articleDetailsComments?: ArticleDetailsCommentsSchema;
     addCommentForm?: AddCommentFormSchema;
-    articles?: ArticlesSchema
+    articles?: ArticlesSchema;
 }
 
 export type StateSchemaKey = KeysOf<StateSchema>;

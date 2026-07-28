@@ -21,7 +21,7 @@ import { CountryValue } from '@/entities/country';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { useInitialEffect } from '@/shared/lib/hooks/use-initial-effect/useInitialEffect';
 import { classNames } from '@/shared/lib/class-names/classNames';
-import { Page } from '@/shared/ui/Page';
+import { Page } from '@/widgets/page';
 
 interface ProfilePageProps {
     className?: string;

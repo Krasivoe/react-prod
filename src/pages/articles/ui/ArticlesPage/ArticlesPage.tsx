@@ -10,8 +10,8 @@ import { useAppDispatch } from '@/shared/lib/hooks/use-app-dispatch/useAppDispat
 import { getArticlesIsLoading, getArticlesView } from '../../model/selectors/articles';
 import { useInitialEffect } from '@/shared/lib/hooks/use-initial-effect/useInitialEffect';
 import { fetchNextArticles } from '../../model/services/fetch-next-articles/fetchNextArticles';
-import { Page } from '@/shared/ui/Page';
 import { initArticlesPage } from '@/pages/articles/model/services/init-articles-page/initArticlesPage';
+import { Page } from '@/widgets/page';
 
 interface ArticlesPageProps {
     className?: string;

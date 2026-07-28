@@ -19,7 +19,7 @@ import { AddCommentForm } from '@/features/add-comment-form';
 import { addCommentForArticle } from '../../model/services/add-comment-for-article/addCommentForArticle';
 import { RoutePath } from '@/shared/config/route-config/routeConfig';
 import { Button } from '@/shared/ui/Button';
-import { Page } from '@/shared/ui/Page';
+import { Page } from '@/widgets/page';
 
 interface ArticleDetailsPageProps {
     className?: string;
