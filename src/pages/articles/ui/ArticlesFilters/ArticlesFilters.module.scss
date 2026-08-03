@@ -1,0 +1,17 @@
+.article-filters {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-m);
+}
+
+.sort-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-wrapper {
+    padding: var(--space-s);
+    border-radius: var(--control-radius-m);
+    background: var(--card-bg);
+}

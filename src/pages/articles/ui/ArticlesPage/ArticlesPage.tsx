@@ -1,10 +1,11 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/class-names/classNames';
 import cls from './ArticlesPage.module.scss';
-import { ArticleList, ArticleViewSelector, ArticleViewValue } from '@/entities/article';
+import { ArticleList } from '@/entities/article';
 import { AsyncReducersMap } from '@/app/providers/store-provider';
-import { articlesActions, articlesReducer, getArticles } from '../../model/slices/articlesSlice';
+import { articlesReducer, getArticles } from '../../model/slices/articlesSlice';
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/use-app-dispatch/useAppDispatch';
 import { getArticlesIsLoading, getArticlesView } from '../../model/selectors/articles';
@@ -12,6 +13,7 @@ import { useInitialEffect } from '@/shared/lib/hooks/use-initial-effect/useIniti
 import { fetchNextArticles } from '../../model/services/fetch-next-articles/fetchNextArticles';
 import { initArticlesPage } from '@/pages/articles/model/services/init-articles-page/initArticlesPage';
 import { Page } from '@/widgets/page';
+import { ArticlesFilters } from '../ArticlesFilters/ArticlesFilters';
 
 interface ArticlesPageProps {
     className?: string;
@@ -24,6 +26,8 @@ const reducers: AsyncReducersMap = {
 const ArticlesPage = (props: ArticlesPageProps) => {
     const { className } = props;
 
+    const [searchParams] = useSearchParams();
+
     const dispatch = useAppDispatch();
 
     const articles = useSelector(getArticles.selectAll);
@@ -31,11 +35,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const isLoading = useSelector(getArticlesIsLoading);
 
     useInitialEffect(() => {
-        dispatch(initArticlesPage());
-    }, [dispatch]);
-
-    const onChangeView = useCallback((viewValue: ArticleViewValue) => {
-        dispatch(articlesActions.setView(viewValue));
+        dispatch(initArticlesPage(searchParams));
     }, [dispatch]);
 
     const onLoadNextPage = useCallback(() => {
@@ -48,11 +48,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
                 onScrollEnd={onLoadNextPage}
                 className={classNames(cls.articlesPage, {}, [className])}
             >
-                <ArticleViewSelector
-                    className={cls.selector}
-                    view={view}
-                    onViewClick={onChangeView}
-                />
+                <ArticlesFilters className={cls.filters} />
 
                 <ArticleList
                     articles={articles}

@@ -4,17 +4,17 @@ import './styles.scss';
 import { DefaultSize, DefaultSizeValue } from '@/shared/types/components';
 import { SelectOption } from '@/shared/ui/Select/types';
 
-interface SelectProps {
+interface SelectProps<T extends string = string> {
     className?: string;
     size?: DefaultSizeValue
     label?: string;
-    options?: SelectOption[];
-    value?: string;
-    onChange?: (value: string) => void;
+    options?: SelectOption<T>[];
+    value?: T;
+    onChange?: (value: T) => void;
     readonly?: boolean;
 }
 
-export const Select = (props: SelectProps) => {
+export const Select = <T extends string = string>(props: SelectProps<T>) => {
     const {
         className,
         size = DefaultSize.M,
@@ -41,7 +41,7 @@ export const Select = (props: SelectProps) => {
     )), [options]);
 
     const onChangeHandler = (event: ChangeEvent<HTMLSelectElement>) => {
-        onChange?.(event.target.value);
+        onChange?.(event.target.value as T);
     };
 
     return (

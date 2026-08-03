@@ -22,9 +22,7 @@ export const fetchNextArticles = createAsyncThunk<
 
             dispatch(articlesActions.setPage(nextPage));
 
-            dispatch(fetchArticlesList({
-                page: nextPage,
-            }));
+            dispatch(fetchArticlesList());
         }
     },
 );

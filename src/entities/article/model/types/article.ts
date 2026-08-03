@@ -11,6 +11,7 @@ type ArticleBlockTypeMap = typeof ArticleBlockType;
 export type ArticleBlockTypeValue = ValuesOf<ArticleBlockTypeMap>;
 
 export const ArticleType = {
+    ALL: 'ALL',
     IT: 'IT',
     SCIENCE: 'SCIENCE',
     ECONOMICS: 'ECONOMICS',
@@ -24,6 +25,14 @@ export const ArticleView = {
 } as const;
 
 export type ArticleViewValue = ValuesOf<typeof ArticleView>;
+
+export const ArticleSortField = {
+    VIEWS: 'views',
+    TITLE: 'title',
+    CREATED: 'createdAt',
+} as const;
+
+export type ArticleSortFieldValue = ValuesOf<typeof ArticleSortField>;
 
 export interface ArticleBlockBase {
     id: string;
