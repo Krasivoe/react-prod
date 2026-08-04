@@ -18,6 +18,21 @@ body {
     display: flex;
 }
 
+*::-webkit-scrollbar {
+    width: var(--space-s);
+    height: var(--space-xs);
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--card-bg); /* цвет дорожки */
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--inverted-primary-color); /* цвет плашки */
+    border-radius: var(--control-radius-xs); /* закругления плашки */
+    border: 2px solid var(--primary-color); /* padding вокруг плашки */
+}
+
 .mix-focus:focus,
 .mix-focus:focus:hover,
 .mix-focus[class*="_focus"],

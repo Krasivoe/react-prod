@@ -8,10 +8,10 @@ import { LoginSchema } from '@/features/auth-by-username';
 import { KeysOf, Undefinable } from '@/shared/types/common';
 import { ProfileSchema } from '@/entities/profile';
 import { ArticleDetailsSchema } from '@/entities/article';
-import { ArticleDetailsCommentsSchema } from '@/pages/article-details';
 import { AddCommentFormSchema } from '@/features/add-comment-form';
 import { ArticlesSchema } from '@/pages/articles';
 import { ScrollSaveSchema } from '@/features/scroll-save';
+import { ArticleDetailsPageSchema } from '@/pages/article-details';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -22,9 +22,9 @@ export interface StateSchema {
     loginForm?: LoginSchema
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
-    articleDetailsComments?: ArticleDetailsCommentsSchema;
     addCommentForm?: AddCommentFormSchema;
     articles?: ArticlesSchema;
+    articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
 export type StateSchemaKey = KeysOf<StateSchema>;
@@ -41,7 +41,7 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema, Unknow
 }
 
 export type AsyncReducersMap = {
-    [name in StateSchemaKey]?: Reducer;
+    [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>;
 }
 
 export interface ThunkExtraArg {

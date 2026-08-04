@@ -1,12 +1,11 @@
 import React, { type PropsWithChildren } from 'react';
 import { Provider } from 'react-redux';
-import { ReducersMapObject } from '@reduxjs/toolkit';
 import { createReduxStore } from '../config/store';
-import { StateSchema } from '../types/schema';
+import { AsyncReducersMap, StateSchema } from '../types/schema';
 
 interface StoreProviderProps extends PropsWithChildren {
     initialState?: Partial<StateSchema>;
-    asyncReducers?: Partial<ReducersMapObject<StateSchema>>;
+    asyncReducers?: AsyncReducersMap;
 }
 
 export const StoreProvider = (props: StoreProviderProps) => {
@@ -18,7 +17,7 @@ export const StoreProvider = (props: StoreProviderProps) => {
 
     const store = createReduxStore(
         initialState as StateSchema,
-        asyncReducers as ReducersMapObject<StateSchema>,
+        asyncReducers,
     );
 
     return (

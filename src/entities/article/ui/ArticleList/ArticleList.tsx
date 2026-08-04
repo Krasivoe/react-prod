@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/class-names/classNames';
 import cls from './ArticleList.module.scss';
@@ -11,7 +11,9 @@ interface ArticleListProps {
     className?: string;
     articles: Article[]
     isLoading?: boolean;
+    target?: HTMLAttributeAnchorTarget
     view?: ArticleViewValue;
+    nowrap?: boolean;
 }
 
 const getSkeletons = (view: ArticleViewValue) => new Array(view === ArticleView.SMALL ? 9 : 3)
@@ -25,7 +27,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
         className,
         articles,
         isLoading,
+        target,
         view = ArticleView.SMALL,
+        nowrap,
     } = props;
 
     const { t } = useTranslation('article');
@@ -35,19 +39,20 @@ export const ArticleList = memo((props: ArticleListProps) => {
             article={article}
             view={view}
             key={article.id}
+            target={target}
         />
     );
 
     if (!isLoading && !articles.length) {
         return (
-            <div className={classNames((cls.articleList), {}, [className, cls[view]])}>
+            <div className={classNames((cls.articleList), { [cls.nowrap]: nowrap }, [className, cls[view]])}>
                 <Text size={TextSize.L} title={t('Статьи не найдены')} />
             </div>
         );
     }
 
     return (
-        <div className={classNames((cls.articleList), {}, [className, cls[view]])}>
+        <div className={classNames((cls.articleList), { [cls.nowrap]: nowrap }, [className, cls[view]])}>
             {articles.length > 0
                 ? articles.map((article) => renderArticle(article))
                 : null}
