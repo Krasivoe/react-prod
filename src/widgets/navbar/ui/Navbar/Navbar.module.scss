@@ -1,12 +1,18 @@
 .navbar {
+    --navbar-padding-inline: var(--space-l);
+
     width: 100%;
     height: var(--navbar-height);
     background: var(--inverted-bg-color);
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding-inline: var(--navbar-padding-inline);
 }
 
 .sign-button {
     margin-left: auto;
+}
+
+.app-name {
+    width: calc(var(--sidebar-width) - var(--navbar-padding-inline));
 }

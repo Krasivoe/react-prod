@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/class-names/classNames';
 import cls from './ArticleDetailsPage.module.scss';
@@ -17,8 +17,6 @@ import { fetchCommentsByArticleId } from '../../model/services/fetch-comments-by
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { AddCommentForm } from '@/features/add-comment-form';
 import { addCommentForArticle } from '../../model/services/add-comment-for-article/addCommentForArticle';
-import { RoutePath } from '@/shared/config/route-config/routeConfig';
-import { Button } from '@/shared/ui/Button';
 import { Page } from '@/widgets/page';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { getArticleRecommendations } from '@/pages/article-details/model/slices/articleDetailsRecommendationsSlice';
@@ -26,6 +24,7 @@ import { getArticleRecommendationsIsLoading } from '@/pages/article-details/mode
 import {
     fetchArticleRecommendations,
 } from '@/pages/article-details/model/services/fetch-article-recommedations/fetchArticleRecommendations';
+import { ArticleDetailsPageHeader } from '@/pages/article-details/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -41,7 +40,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article');
 
     const { id: idFromRoute } = useParams<{ id: string }>();
-    const navigate = useNavigate();
 
     const dispatch = useAppDispatch();
 
@@ -63,10 +61,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         dispatch(addCommentForArticle(text));
     }, [dispatch]);
 
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
-
     if (!id) {
         return (
             <Page className={classNames(cls.notFound, {}, [className])}>
@@ -80,11 +74,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
             {id
                 ? (
                     <Page className={classNames((cls.articleDetailsPage), {}, [className])}>
-                        <Button
-                            className={cls.buttonBack}
-                            label={t('Назад к списку')}
-                            onClick={onBackToList}
-                        />
+                        <ArticleDetailsPageHeader className={cls.header} />
 
                         <ArticleDetails id={id!} />
 

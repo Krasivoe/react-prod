@@ -2,6 +2,7 @@ import { ValuesOf } from '@/shared/types/common';
 
 export const TextTheme = {
     PRIMARY: 'primary',
+    INVERTED: 'inverted',
     ERROR: 'error',
 } as const;
 

@@ -3,14 +3,14 @@
     padding-bottom: var(--space-4xl);
 }
 
+.header {
+    margin-bottom: var(--space-m);
+}
+
 .not-found {
     text-align: center;
     font: var(--font-l);
     margin: var(--space-3xl) auto 0;
-}
-
-.button-back {
-    margin-bottom: var(--space-m);
 }
 
 .block-title {
