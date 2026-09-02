@@ -27,7 +27,9 @@ export const fetchCommentsByArticleId = createAsyncThunk<
 
             return response.data;
         } catch (e) {
-            return rejectWithValue('error');
+            const error = e as Error;
+
+            return rejectWithValue(error.message);
         }
     },
 );

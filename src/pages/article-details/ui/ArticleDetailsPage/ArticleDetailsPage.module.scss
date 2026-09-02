@@ -1,5 +1,10 @@
 .article-details-page {
     min-height: 100%;
+    padding-bottom: var(--space-4xl);
+}
+
+.header {
+    margin-bottom: var(--space-m);
 }
 
 .not-found {
@@ -8,14 +13,20 @@
     margin: var(--space-3xl) auto 0;
 }
 
-.comments-title {
+.block-title {
     margin-bottom: var(--space-m);
 }
 
-.comment-form {
-    margin-bottom: var(--space-4xl);
-}
-
+.recommendations,
 .comments {
     margin-top: var(--space-4xl);
+}
+
+.recommendations-list {
+    overflow-x: auto;
+    padding-bottom: var(--space-3xs);
+}
+
+.comment-form {
+    margin-bottom: var(--space-2xl);
 }

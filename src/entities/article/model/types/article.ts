@@ -1,4 +1,5 @@
 import { ValuesOf } from '@/shared/types/common';
+import { User } from '@/entities/user';
 
 export const ArticleBlockType = {
     CODE: 'CODE',
@@ -10,12 +11,28 @@ type ArticleBlockTypeMap = typeof ArticleBlockType;
 export type ArticleBlockTypeValue = ValuesOf<ArticleBlockTypeMap>;
 
 export const ArticleType = {
+    ALL: 'ALL',
     IT: 'IT',
     SCIENCE: 'SCIENCE',
     ECONOMICS: 'ECONOMICS',
 } as const;
 
 export type ArticleTypeValue = ValuesOf<typeof ArticleType>;
+
+export const ArticleView = {
+    SMALL: 'small',
+    BIG: 'big',
+} as const;
+
+export type ArticleViewValue = ValuesOf<typeof ArticleView>;
+
+export const ArticleSortField = {
+    VIEWS: 'views',
+    TITLE: 'title',
+    CREATED: 'createdAt',
+} as const;
+
+export type ArticleSortFieldValue = ValuesOf<typeof ArticleSortField>;
 
 export interface ArticleBlockBase {
     id: string;
@@ -43,6 +60,7 @@ export type ArticleBlock = ArticleCodeBlockData | ArticleImageBlockData | Articl
 
 export interface Article {
     id: string;
+    user: User;
     title: string;
     subtitle: string;
     img: string;

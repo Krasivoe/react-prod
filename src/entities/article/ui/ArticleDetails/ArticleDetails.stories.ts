@@ -5,6 +5,7 @@ import { Theme } from '@/app/providers/theme-provider';
 
 const article: Article = {
     id: '1',
+    user: { id: '1', username: 'Petya' },
     title: 'Javascript news',
     subtitle: 'Что нового в JS за 2022 год?',
     img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/500px-Unofficial_JavaScript_logo_2.svg.png',

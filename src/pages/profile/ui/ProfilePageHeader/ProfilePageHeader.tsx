@@ -16,7 +16,8 @@ interface ProfilePageHeaderProps {
 }
 
 export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
-    const { t } = useTranslation('profile');
+    const { t } = useTranslation();
+    const { t: profileT } = useTranslation('profile');
 
     const dispatch = useAppDispatch();
 
@@ -44,7 +45,7 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
 
     return (
         <div className={classNames((cls.header), {}, [className])}>
-            <Text title={t('Профиль')} />
+            <Text title={profileT('Профиль')} />
 
             {canEdit && (
                 <div className={cls.actions}>

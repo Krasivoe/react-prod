@@ -1,0 +1,12 @@
+.ui-page {
+    height: calc(100dvh - var(--navbar-height));
+    overflow-y: auto;
+    flex-grow: 1;
+    width: 100%;
+    padding: var(--page-wrapper-padding) var(--page-wrapper-padding) var(--page-wrapper-padding) var(--space-5xl);
+
+    &__scroll-trigger {
+        height: var(--space-4xl);
+        margin: var(--space-xs);
+    }
+}

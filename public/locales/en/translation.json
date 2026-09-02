@@ -1,12 +1,16 @@
 {
   "Язык": "English",
   "Короткий язык": "En",
+  "Zaits App": "Zaits App",
   "Загрузка": "Loading...",
   "Страница не найдена": "Page not found",
   "У нас что-то сломалось...": "Something's broken....",
   "Обновить страницу": "Reload page",
   "Войти": "Sign in",
   "Выйти": "Sign out",
+  "Редактировать": "Edit",
+  "Отменить": "Cancel",
+  "Сохранить": "Save",
   "Введите username": "input username",
   "Введите пароль": "input password",
   "Форма авторизации": "Authorization form",
@@ -14,5 +18,13 @@
   "Укажите валюту": "Select the currency",
   "Укажите страну": "Select the country",
   "Введите текст комментария": "Enter the comment text",
-  "Отправить": "Send"
+  "Отправить": "Send",
+  "Сортировать по": "Sort by",
+  "дате создания": "creation date",
+  "названию": "title",
+  "просмотрам": "views",
+  "Порядок": "Order",
+  "сначала новые": "ascending",
+  "сначала старые": "descending",
+  "Поиск": "Search"
 }

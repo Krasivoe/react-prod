@@ -1,0 +1,131 @@
+@use "@/app/styles/_mixins/ellipsis" as mixins;
+
+@mixin image($height) {
+    width: 100%;
+    height: 100%;
+    max-height: #{$height};
+    object-fit: cover;
+    border-radius: var(--control-radius-xs);
+}
+
+.article-list-item {
+    --article-title-margin: var(--space-xs);
+    --image-height: 200px;
+}
+
+.views {
+    display: flex;
+    gap: var(--space-xs);
+    align-items: center;
+}
+
+.big {
+    .header,
+    .header-info {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-info {
+        column-gap: var(--space-s);
+    }
+
+    .date {
+        margin-left: auto;
+    }
+
+    .title {
+        margin-top: var(--article-title-margin);
+    }
+
+    .types {
+        margin-top: var(--space-2xs);
+    }
+
+    .image {
+        @include image(250px);
+
+        margin: var(--space-s) 0;
+
+        &-skeleton {
+            margin-bottom: var(--space-l);
+        }
+    }
+
+    .text-block {
+        max-height: 200px;
+        overflow-y: hidden;
+    }
+
+    .footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: var(--space-2xl);
+    }
+}
+
+.small {
+    width: 230px;
+    transition: var(--transition-default);
+    cursor: pointer;
+
+    .image-wrapper {
+        width: 100%;
+        height: var(--image-height);
+        position: relative;
+    }
+
+    .image {
+        @include image(var(--image-height));
+    }
+
+    .date {
+        position: absolute;
+        right: var(--space-2xs);
+        top: var(--space-2xs);
+        opacity: 0;
+        transition: var(--transition-default);
+    }
+
+    &:hover {
+        opacity: 0.9;
+        transform: scale(1.01);
+
+        .date {
+            opacity: 1;
+        }
+    }
+
+    .info-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: var(--space-xs);
+    }
+
+    .types {
+        --width: 114px;
+
+        width: var(--width);
+    }
+
+    .types p {
+        @include mixins.ellipsis(var(--width));
+    }
+
+    .views {
+        margin-left: auto;
+    }
+
+    .title {
+        --width: 200px;
+
+        width: var(--width);
+        margin-top: var(--article-title-margin);
+    }
+
+    .title p {
+        @include mixins.ellipsis(var(--width));
+    }
+}

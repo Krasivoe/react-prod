@@ -1,0 +1,21 @@
+@use "@/app/styles/_mixins/interactiveOpacity" as mixins;
+
+.ui-tabs {
+    display: flex;
+    gap: var(--space-xs);
+
+    &__tab {
+        border: 1px solid transparent;
+        background: var(--card-bg);
+        cursor: pointer;
+        padding: var(--space-2xs) var(--space-s);
+        transition: var(--transition-default);
+        border-radius: var(--control-radius);
+
+        @include mixins.interactive-opacity;
+
+        &.active {
+            border: 1px solid var(--primary-color);
+        }
+    }
+}

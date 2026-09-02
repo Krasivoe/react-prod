@@ -18,12 +18,19 @@ body {
     display: flex;
 }
 
-.page-wrapper {
-    height: calc(100dvh - var(--navbar-height));
-    overflow-y: auto;
-    flex-grow: 1;
-    width: 100%;
-    padding: var(--page-wrapper-padding) var(--page-wrapper-padding) var(--page-wrapper-padding) var(--space-5xl);
+*::-webkit-scrollbar {
+    width: var(--space-s);
+    height: var(--space-xs);
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--card-bg); /* цвет дорожки */
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--inverted-primary-color); /* цвет плашки */
+    border-radius: var(--control-radius-xs); /* закругления плашки */
+    border: 2px solid var(--primary-color); /* padding вокруг плашки */
 }
 
 .mix-focus:focus,

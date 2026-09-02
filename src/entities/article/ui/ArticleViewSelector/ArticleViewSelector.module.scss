@@ -1,0 +1,8 @@
+.article-view-selector {
+    display: flex;
+    align-self: start;
+}
+
+.not-selected {
+    fill: var(--primary-color-disabled);
+}

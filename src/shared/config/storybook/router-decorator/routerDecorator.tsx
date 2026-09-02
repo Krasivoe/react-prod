@@ -1,9 +1,16 @@
 import '@/app/styles/index.scss';
 import type { Decorator } from '@storybook/react';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
-export const RouterDecorator: Decorator = (StoryComponent) => (
-    <BrowserRouter>
-        <StoryComponent />
-    </BrowserRouter>
-);
+export const RouterDecorator: Decorator = (StoryComponent, { parameters }) => {
+    const route = parameters.route ?? '/';
+    const path = parameters.path ?? route;
+
+    return (
+        <MemoryRouter initialEntries={[route]}>
+            <Routes>
+                <Route path={path} element={<StoryComponent />} />
+            </Routes>
+        </MemoryRouter>
+    );
+};

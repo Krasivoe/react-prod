@@ -21,6 +21,11 @@
             --title-color: var(--red-light);
             --text-color: var(--red-dark);
         }
+
+        &_inverted {
+            --title-color: var(--inverted-primary-color);
+            --text-color: var(--inverted-secondary-color);
+        }
     }
 
     &_align {

@@ -2,10 +2,11 @@ import { AsyncThunkAction } from '@reduxjs/toolkit';
 import axios, { AxiosStatic } from 'axios';
 import { StateSchema, ThunkConfig } from '@/app/providers/store-provider';
 
-type ActionCreatorType<Returned, Arg, RejectValue> = (arg: Arg) => AsyncThunkAction<
-    Returned,
-    Arg,
-    ThunkConfig<RejectValue>>
+type ActionCreatorArgs<Arg> = [Arg] extends [void] ? [] : [arg: Arg];
+
+type ActionCreatorType<Returned, Arg, RejectValue> = (
+    ...args: ActionCreatorArgs<Arg>
+) => AsyncThunkAction<Returned, Arg, ThunkConfig<RejectValue>>
 
 interface Extra {
     api: jest.MockedFunctionDeep<AxiosStatic>;
@@ -38,8 +39,8 @@ export class TestAsyncClass<Returned, Arg, RejectValue> {
         };
     }
 
-    async callThunk(arg?: Arg) {
-        const action = this.actionCreator(arg as Arg);
+    async callThunk(...args: ActionCreatorArgs<Arg>) {
+        const action = this.actionCreator(...args);
 
         return action(this.dispatch, this.getState, this.extra);
     }

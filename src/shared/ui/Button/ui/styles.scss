@@ -1,3 +1,5 @@
+@use "@/app/styles/_mixins/interactiveOpacity" as mixins;
+
 @mixin clear-theme($color, $background) {
     --button-color: #{$color};
 
@@ -35,18 +37,18 @@
     align-items: center;
     transition: opacity var(--transition-default);
 
+    @include mixins.interactive-opacity;
+
     &:focus {
         box-shadow: 0 0 0 2px var(blue);
     }
 
     &:hover {
-        opacity: 0.9;
         fill-opacity: 90%;
         stroke-opacity: 90%;
     }
 
     &:active {
-        opacity: 0.85;
         fill-opacity: 85%;
         stroke-opacity: 85%;
     }

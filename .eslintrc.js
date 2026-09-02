@@ -49,6 +49,8 @@ module.exports = {
         'no-undef': 'off',
         'no-redeclare': 'off',
         '@typescript-eslint/no-redeclare': 'error',
+        'react/no-array-index-key': 'off',
+        'arrow-body-style': 'off',
     },
     globals: {
         __IS_DEV__: true,
